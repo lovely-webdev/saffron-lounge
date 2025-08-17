@@ -113,7 +113,7 @@ export default function Header() {
           
           {/* Blog with submenu */}
           <div className="relative group flex items-center min-w-[70px] h-8">
-            <button className="hover:text-[#E2B279] transition font-bold flex items-center text-[17px] leading-none focus:outline-none" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+            <button className="hover:text-[#E2B279] transition font-normal flex items-center text-[17px] leading-none focus:outline-none tracking-wide" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif', letterSpacing: '0.02em' }}>
               Blog <span className="ml-1 text-sm">&#x25BC;</span>
             </button>
             <div className="absolute left-0 top-full mt-3 w-48 bg-[#18181c] rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 z-50 border border-[#23232a]">

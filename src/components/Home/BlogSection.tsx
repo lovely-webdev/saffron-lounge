@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { theme } from '../../app/theme';
+import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const BlogSection = () => {
   const blogPosts = [
@@ -34,10 +35,10 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#18181c]`}>
+    <section className={`${theme.spacing.sectionPadding} bg-[#18181c] ${etarBellotaFont.variable}`}>
       <div className="max-w-full mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Blog</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Our Blog</h2>
           <p className="text-xl text-[#bdbdbd] max-w-3xl mx-auto">
             Stay updated with our latest culinary insights, recipes, and restaurant news
           </p>
@@ -63,7 +64,7 @@ const BlogSection = () => {
                   <span className="text-[#e2b279] font-bold text-sm uppercase tracking-wider">{post.category}</span>
                   <span className="text-[#bdbdbd] text-sm">{post.date}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#e2b279] transition-colors duration-300">{post.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#e2b279] transition-colors duration-300" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{post.title}</h3>
                 <p className="text-[#bdbdbd] mb-6">{post.excerpt}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-[#e2b279]">By {post.author}</span>

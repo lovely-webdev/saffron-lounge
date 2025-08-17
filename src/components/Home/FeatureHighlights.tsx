@@ -1,5 +1,6 @@
 import React from 'react';
 import { theme } from '../../app/theme';
+import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const FeatureHighlights = () => {
   const features = [
@@ -42,7 +43,7 @@ const FeatureHighlights = () => {
   ];
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#18181c]`}>
+    <section className={`${theme.spacing.sectionPadding} bg-[#18181c] ${etarBellotaFont.variable}`}>
       <div className="max-w-full mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {features.map((feature, index) => (
@@ -55,7 +56,7 @@ const FeatureHighlights = () => {
                   {feature.icon}
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{feature.title}</h3>
               <p className="text-[#bdbdbd] text-lg leading-relaxed">{feature.description}</p>
             </div>
           ))}

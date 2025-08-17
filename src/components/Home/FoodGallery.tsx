@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { theme } from '../../app/theme';
+import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const FoodGallery = () => {
   // Sample gallery images
@@ -14,10 +15,10 @@ const FoodGallery = () => {
   ];
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#18181c]`}>
+    <section className={`${theme.spacing.sectionPadding} bg-[#18181c] ${etarBellotaFont.variable}`}>
       <div className="max-w-full mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Food Gallery</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Food Gallery</h2>
           <p className="text-xl text-[#bdbdbd] max-w-3xl mx-auto">
             Explore our culinary creations through these carefully curated images
           </p>

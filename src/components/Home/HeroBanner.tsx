@@ -61,7 +61,7 @@ export default function HeroBanner() {
                 className="rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)] border-[12px] border-[#18171d] object-cover w-full aspect-[16/9]"
                 priority
               />
-              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[60px] xs:text-[80px] sm:text-[120px] md:text-[150px] lg:text-[180px] xl:text-[200px] text-[#e2b889] font-black leading-none tracking-[-0.08em] pointer-events-none select-none mix-blend-overlay opacity-95 whitespace-nowrap animate-fade font-playfair">
+              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[60px] xs:text-[80px] sm:text-[120px] md:text-[150px] lg:text-[180px] xl:text-[200px] text-[#e2b279] font-black leading-none tracking-[-0.08em] pointer-events-none select-none mix-blend-overlay opacity-95 whitespace-nowrap animate-fade font-playfair">
                 DE<span className="text-white">LICIO</span>US
               </span>
             </div>
@@ -85,7 +85,7 @@ export default function HeroBanner() {
             />
             <a
               href="/book-a-table"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full bg-[#e2b889] text-[#18171d] text-xl lg:text-2xl font-bold shadow-xl hover:bg-white hover:scale-110 hover:shadow-2xl transition-all duration-300"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full bg-[#e2b279] text-[#18171d] text-xl lg:text-2xl font-bold shadow-xl hover:bg-white hover:scale-110 hover:shadow-2xl transition-all duration-300"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 6l6 6-6 6" />

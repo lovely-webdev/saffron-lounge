@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { theme } from '../../app/theme';
+import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const MenuShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('Starter');
@@ -36,10 +37,10 @@ const MenuShowcase = () => {
   };
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#111115]`}>
+    <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
       <div className="max-w-full mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Menu</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Our Menu</h2>
           <p className="text-xl text-[#bdbdbd] max-w-3xl mx-auto">
             Discover our carefully crafted dishes made with the finest ingredients and culinary expertise
           </p>
@@ -82,7 +83,7 @@ const MenuShowcase = () => {
               </div>
               <div className="flex-grow">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-white">{item.name}</h3>
+                  <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{item.name}</h3>
                   <span className="text-xl font-bold text-[#e2b279]">{item.price}</span>
                 </div>
                 <p className="text-[#bdbdbd] text-base mb-4">{item.description}</p>

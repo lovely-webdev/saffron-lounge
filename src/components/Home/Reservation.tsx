@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { theme } from '../../app/theme';
+import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -28,11 +29,11 @@ const Reservation = () => {
   };
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#111115]`}>
+    <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
       <div className="max-w-full mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Book A Table</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Book A Table</h2>
             <p className="text-xl text-[#bdbdbd] mb-8">
               Reserve your table now and experience an unforgettable culinary journey with our exquisite dishes and exceptional service.
             </p>
@@ -46,7 +47,7 @@ const Reservation = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Location</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Location</h3>
                   <p className="text-[#bdbdbd]">12th Block-A, Ribonstreet, Australia</p>
                 </div>
               </div>
@@ -58,7 +59,7 @@ const Reservation = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Working Hours</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Working Hours</h3>
                   <p className="text-[#bdbdbd]">Sunday - Thursday: 08:00 am - 09:00 pm</p>
                   <p className="text-[#bdbdbd]">Only Friday: 03:00 pm - 09:00 pm</p>
                   <p className="text-[#bdbdbd]">Saturday: Closed</p>
@@ -72,7 +73,7 @@ const Reservation = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Contact</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Contact</h3>
                   <p className="text-[#bdbdbd]">Phone: (800) 216 2020</p>
                   <p className="text-[#bdbdbd]">Email: info@etar.com</p>
                 </div>

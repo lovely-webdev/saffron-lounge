@@ -41,18 +41,25 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-6 text-center">Profile</h2>
-        <div className="space-y-4">
-          <div>
-            <span className="font-semibold">Name:</span> {user.name}
-          </div>
-          <div>
-            <span className="font-semibold">Email:</span> {user.email}
-          </div>
-        </div>
-      </div>
-    </div>
+  	<div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  		<div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full">
+  			<div className="text-center mb-8">
+  				<h1 className="text-3xl font-bold text-gray-900 mb-4">Profile</h1>
+  				<div className="flex items-center justify-center text-gray-600 py-4">
+  					<a href="/" className="hover:text-blue-600 transition-colors duration-300">Home</a>
+  					<span className="mx-3">/</span>
+  					<span className="text-blue-600">Profile</span>
+  				</div>
+  			</div>
+  			<div className="space-y-4">
+  				<div>
+  					<span className="font-semibold">Name:</span> {user.name}
+  				</div>
+  				<div>
+  					<span className="font-semibold">Email:</span> {user.email}
+  				</div>
+  			</div>
+  		</div>
+  	</div>
   );
 }

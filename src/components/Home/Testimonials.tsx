@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { theme } from '../../app/theme';
+import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const Testimonials = () => {
   const testimonials = [
@@ -31,10 +32,10 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#111115]`}>
+    <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
       <div className="max-w-full mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Testimonials</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Testimonials</h2>
           <p className="text-xl text-[#bdbdbd] max-w-3xl mx-auto">
             Hear what our valued customers have to say about their dining experience
           </p>
@@ -74,7 +75,7 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white">{testimonial.name}</h4>
+                  <h4 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{testimonial.name}</h4>
                   <p className="text-[#e2b279]">{testimonial.role}</p>
                 </div>
               </div>
