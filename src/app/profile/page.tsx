@@ -58,6 +58,7 @@ export default function ProfilePage() {
   				<div>
   					<span className="font-semibold">Email:</span> {user.email}
   				</div>
+          testing sync code
   			</div>
   		</div>
   	</div>
