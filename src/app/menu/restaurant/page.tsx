@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { etarBellotaFont } from '../../app/etarBellotaFont';
+import { etarBellotaFont } from '../../../app/etarBellotaFont';
 
 const RestaurantMenuPage = () => {
   const [activeCategory, setActiveCategory] = useState('Starter');
@@ -30,11 +30,11 @@ const RestaurantMenuPage = () => {
       { id: 12, name: 'Ice Cream', price: '$8.00', image: '/assets/img/menu/menu-12.webp', description: 'Vanilla bean with caramel sauce' },
     ],
     'Drink & Wines': [
-      { id: 13, name: 'Red Wine', price: '$12.00', image: '/assets/img/menu/menu-13.webp', description: 'Glass of premium Cabernet Sauvignon' },
-      { id: 14, name: 'White Wine', price: '$11.00', image: '/assets/img/menu/menu-14.webp', description: 'Glass of Chardonnay' },
-      { id: 15, name: 'Craft Beer', price: '$8.00', image: '/assets/img/menu/menu-15.webp', description: 'Local IPA on tap' },
-      { id: 16, name: 'Signature Cocktail', price: '$15.00', image: '/assets/img/menu/menu-16.webp', description: 'House special with premium spirits' },
-    ]
+      { id: 13, name: 'House Red Wine', price: '$9.00', image: '/assets/img/menu/menu-13.webp', description: 'Glass of our premium house red' },
+      { id: 14, name: 'House White Wine', price: '$9.00', image: '/assets/img/menu/menu-14.webp', description: 'Glass of our premium house white' },
+      { id: 15, name: 'Craft Beer', price: '$7.00', image: '/assets/img/menu/menu-15.webp', description: 'Selection of local craft beers' },
+      { id: 16, name: 'Signature Cocktail', price: '$14.00', image: '/assets/img/menu/menu-16.webp', description: 'Ask your server about today\'s special' },
+    ],
   };
 
   return (
@@ -61,42 +61,39 @@ const RestaurantMenuPage = () => {
               className={`px-6 py-3 rounded-full text-lg font-bold transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-[#e2b279] text-[#111115]'
-                  : 'bg-[#18181c] text-white hover:bg-[#23232a]'
+                  : 'bg-[#18181c] text-white hover:bg-[#e2b279] hover:text-[#111115] border border-[#23232a]'
               }`}
             >
               {category}
             </button>
           ))}
         </div>
-        
+
         {/* Menu Items */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {menuItems[activeCategory as keyof typeof menuItems].map((item) => (
-            <div
-              key={item.id}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {menuItems[activeCategory as keyof typeof menuItems]?.map((item) => (
+            <div 
+              key={item.id} 
               className="flex gap-6 p-6 bg-[#18181c] rounded-lg border border-[#23232a] hover:border-[#e2b279] transition-all duration-300 group"
             >
-              <div className="flex-shrink-0">
-                <div className="relative overflow-hidden rounded-lg">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={120}
-                    height={120}
-                    className="object-cover w-[120px] h-[120px] transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
+              <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                <Image 
+                  src={item.image} 
+                  alt={item.name} 
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="flex-grow">
+              <div className="flex-1">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{item.name}</h3>
+                  <h3 className="text-xl font-bold text-white group-hover:text-[#e2b279] transition-colors duration-300">{item.name}</h3>
                   <span className="text-xl font-bold text-[#e2b279]">{item.price}</span>
                 </div>
-                <p className="text-[#bdbdbd] text-base mb-4">{item.description}</p>
-                <button className="text-[#e2b279] font-bold text-base flex items-center group">
+                <p className="text-[#bdbdbd] mb-3">{item.description}</p>
+                <button className="text-[#e2b279] font-bold hover:text-white transition-colors duration-300 flex items-center">
                   Add to Cart
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                   </svg>
                 </button>
               </div>

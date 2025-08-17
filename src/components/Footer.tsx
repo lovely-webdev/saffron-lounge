@@ -9,7 +9,7 @@ export default function Footer() {
       {/* Top section: Logo and Newsletter */}
       <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 pt-16 sm:pt-20 pb-12 sm:pb-16 border-b border-[#23232a] relative">
         <div className="flex-1 flex items-center justify-center sm:justify-start mb-8 sm:mb-0">
-          <Image src="/assets/img/logo-white.webp" alt="The Saffron Lounge Logo" width={100} height={100} className="h-20 sm:h-24 w-auto" unoptimized />
+          <Image src="https://templates.hibotheme.com/etar/default/assets/img/logo-white.webp" alt="The Saffron Lounge Logo" width={100} height={100} className="h-20 sm:h-24 w-auto" unoptimized />
         </div>
         <div className="flex-1 flex flex-col items-center sm:items-end w-full">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-[#fff] text-center sm:text-right">Join Our Newsletter</h2>

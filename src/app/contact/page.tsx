@@ -40,7 +40,7 @@ export default function ContactPage() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
                 CONTACT US
               </h1>
-              <div className="flex items-center justify-center text-[#bdbdbd] py-4">
+              <div className="flex items-center justify-center text-[#bdbdbd] py-6">
                 <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
                 <span className="mx-3">/</span>
                 <span className="text-[#e2b279]">Contact Us</span>

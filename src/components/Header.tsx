@@ -45,7 +45,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 select-none min-w-[180px]">
           <Image 
-            src="/assets/img/logo-white.webp" 
+            src="https://templates.hibotheme.com/etar/default/assets/img/logo-white.webp"
             alt="Etar Logo" 
             width={48} 
             height={48} 
@@ -56,17 +56,13 @@ export default function Header() {
         
         {/* Desktop Navigation */}
         <nav className={`hidden md:flex gap-8 lg:gap-10 items-center ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
-          <div className="relative group flex items-center min-w-[70px] h-8">
-            <button
-              className={`font-normal text-[17px] leading-none flex items-center focus:outline-none transition-colors duration-200 tracking-wide ${pathname === '/' ? 'text-[#E2B279]' : 'text-white hover:text-[#E2B279]'}`}
-              style={{ fontFamily: 'var(--font-etar-bellota), sans-serif', letterSpacing: '0.02em' }}
-            >
-              Home <span className="ml-1 text-sm">&#x25BC;</span>
-            </button>
-            <div className="absolute left-0 top-full mt-3 w-48 bg-[#18181c] rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 z-50 border border-[#23232a]">
-              <Link href="/" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] transition" style={{fontFamily: 'var(--font-etar-bellota), sans-serif'}}>Home</Link>
-            </div>
-          </div>
+          <Link
+            href="/"
+            className={`transition font-normal flex items-center text-[17px] leading-none min-w-[70px] h-8 tracking-wide ${pathname === '/' ? 'text-[#E2B279]' : 'text-white hover:text-[#E2B279]'}`}
+            style={{ fontFamily: 'var(--font-etar-bellota), sans-serif', letterSpacing: '0.02em' }}
+          >
+            Home
+          </Link>
           
           <Link
             href="/about"
@@ -169,14 +165,9 @@ export default function Header() {
           <div className="flex flex-col h-full pt-24 pb-10">
             <nav className="flex-1 overflow-y-auto px-8">
               <div className="space-y-6">
-                <div>
-                  <button className="text-[#E2B279] font-bold text-2xl flex items-center w-full py-3 border-b border-[#23232a]">
-                    Home <span className="ml-2 text-lg">&#x25BC;</span>
-                  </button>
-                  <div className="pl-4 mt-4 space-y-4">
-                    <Link href="/" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Home</Link>
-                  </div>
-                </div>
+                              <Link href="/" className="text-[#E2B279] font-bold text-2xl block py-3 border-b border-[#23232a]" onClick={toggleMobileMenu}>
+                Home
+              </Link>
                 
                 <Link href="/about" className="text-white font-bold text-2xl block py-3 border-b border-[#23232a] hover:text-[#E2B279]" onClick={toggleMobileMenu}>
                   About

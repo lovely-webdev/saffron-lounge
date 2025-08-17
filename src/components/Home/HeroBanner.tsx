@@ -7,7 +7,7 @@ export default function HeroBanner() {
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-24 lg:py-36"
       style={{
         backgroundColor: '#18171d',
-        backgroundImage: "url('/assets/img/hero/hero-bg-shape.webp')",
+        backgroundImage: "url('/assests-main/hero-bg-shape.webp')",
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -19,7 +19,7 @@ export default function HeroBanner() {
       {/* Left side image */}
       <div className="hidden lg:block absolute left-12 bottom-40 z-20 animate-float">
         <Image
-          src="/assets/img/gallery/gallery-1.webp"
+          src="/assests-main/hero-img-1.webp"
           alt="Side Dish"
           width={240}
           height={240}

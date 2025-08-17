@@ -74,7 +74,7 @@ export default function SignUpPage() {
 			<div className="max-w-md w-full space-y-8">
 				<div className="text-center mb-8">
 					<h1 className="text-3xl font-bold text-gray-900 mb-4">Create Account</h1>
-					<div className="flex items-center justify-center text-gray-600 py-4">
+					<div className="flex items-center justify-center text-gray-600 py-6">
 						<a href="/" className="hover:text-blue-600 transition-colors duration-300">Home</a>
 						<span className="mx-3">/</span>
 						<span className="text-blue-600">Sign Up</span>

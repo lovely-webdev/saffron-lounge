@@ -43,7 +43,7 @@ const TeamProfiles: React.FC<TeamProfilesProps> = ({
           </h2>
           
           {showBreadcrumbs && (
-            <div className="flex items-center justify-center py-4">
+            <div className="flex items-center justify-center py-6">
               <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
               <span className="mx-3">/</span>
               <span className="text-[#e2b279]">Our Team</span>

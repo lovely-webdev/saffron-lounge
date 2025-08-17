@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { etarBellotaFont } from '../etarBellotaFont';
+import { etarBellotaFont } from '../../../app/etarBellotaFont';
 
-export default function AboutPage() {
+export default function PagesAboutPage() {
   return (
     <section className={`min-h-screen bg-[#111115] py-20 ${etarBellotaFont.variable}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -92,4 +92,4 @@ export default function AboutPage() {
       </div>
     </section>
   );
-} 
+}
