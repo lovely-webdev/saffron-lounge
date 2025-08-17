@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { etarBellotaFont } from '@/app/etarBellotaFont';
 
 const VideoSection = () => {
   return (

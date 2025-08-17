@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 export default function AboutPage() {
@@ -15,7 +16,7 @@ export default function AboutPage() {
               About Us
             </h1>
             <div className="flex items-center text-[#bdbdbd]">
-              <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
+              <Link href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</Link>
               <span className="mx-3">/</span>
               <span className="text-[#e2b279]">About Us</span>
             </div>
@@ -40,7 +41,7 @@ export default function AboutPage() {
               </div>
 
               <p className="text-[#bdbdbd] text-lg leading-relaxed mb-8">
-                We believe that great food brings people together. That's why we're committed to using only the finest ingredients, sourced locally whenever possible, and prepared with passion and creativity by our talented chefs.
+                We believe that great food brings people together. That&apos;s why we&apos;re committed to using only the finest ingredients, sourced locally whenever possible, and prepared with passion and creativity by our talented chefs.
               </p>
 
               <div className="space-y-6">
@@ -118,7 +119,7 @@ export default function AboutPage() {
               What We Offer For Your Family
             </h2>
             <p className="text-[#bdbdbd] text-lg max-w-3xl mx-auto mt-6">
-              We're committed to providing you with an exceptional dining experience that combines delicious food, outstanding service, and a warm, inviting atmosphere.
+              We&apos;re committed to providing you with an exceptional dining experience that combines delicious food, outstanding service, and a warm, inviting atmosphere.
             </p>
           </div>
 
@@ -265,7 +266,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white">Sarah Johnson</h3>
                 <p className="text-[#e2b279] mb-3">Pastry Chef</p>
                 <p className="text-[#bdbdbd]">
-                  Sarah's artistic touch and innovative techniques create unforgettable desserts.
+                  Sarah&apos;s artistic touch and innovative techniques create unforgettable desserts.
                 </p>
               </div>
             </div>
@@ -304,7 +305,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white">Michael Chen</h3>
                 <p className="text-[#e2b279] mb-3">Sous Chef</p>
                 <p className="text-[#bdbdbd]">
-                  Michael's precision and dedication ensure every dish meets our high standards.
+                  Michael&apos;s precision and dedication ensure every dish meets our high standards.
                 </p>
               </div>
             </div>

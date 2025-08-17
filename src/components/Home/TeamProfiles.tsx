@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 import TeamMemberCard from '../TeamMemberCard';
@@ -29,10 +30,6 @@ const TeamProfiles: React.FC<TeamProfilesProps> = ({
   const textStyle = variant === 'page' 
     ? 'text-[#bdbdbd]' 
     : 'text-[#bdbdbd]';
-    
-  const titleStyle = variant === 'page' 
-    ? 'text-white' 
-    : 'text-white';
 
   return (
     <section className={`${sectionStyle} ${etarBellotaFont.variable} ${className}`}>
@@ -44,7 +41,7 @@ const TeamProfiles: React.FC<TeamProfilesProps> = ({
           
           {showBreadcrumbs && (
             <div className="flex items-center justify-center py-6">
-              <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
+              <Link href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</Link>
               <span className="mx-3">/</span>
               <span className="text-[#e2b279]">Our Team</span>
             </div>

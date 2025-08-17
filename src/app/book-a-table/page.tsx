@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const BookATablePage = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ const BookATablePage = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Book A Table</h1>
           <div className="flex items-center justify-center text-[#bdbdbd] py-6">
-            <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
+            <Link href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</Link>
             <span className="mx-3">/</span>
             <span className="text-[#e2b279]">Book A Table</span>
           </div>
@@ -47,7 +48,7 @@ const BookATablePage = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Make A Reservation</h2>
             <p className="text-lg text-[#bdbdbd] mb-8">
-              We're thrilled to have you dine with us. Please fill out the form to book your table, and our team will confirm your reservation shortly.
+              We&apos;re thrilled to have you dine with us. Please fill out the form to book your table, and our team will confirm your reservation shortly.
             </p>
             
             <div className="space-y-6">

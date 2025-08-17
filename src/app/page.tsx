@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import HeroBanner from "@/components/Home/HeroBanner";
 import AboutSection from "@/components/Home/AboutSection";
 import FeatureHighlights from "@/components/Home/FeatureHighlights";
@@ -14,8 +14,17 @@ import VideoSection from "@/components/Home/VideoSection";
 import { getTeamMembers } from '@/lib/teamData';
 import { TeamMember } from '@/types/team';
 
-export default async function Home() {
-  const teamMembers: TeamMember[] = await getTeamMembers();
+export default function Home() {
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+
+  useEffect(() => {
+    const fetchTeamMembers = async () => {
+      const members = await getTeamMembers();
+      setTeamMembers(members);
+    };
+    
+    fetchTeamMembers();
+  }, []);
 
   return (
     <main className="flex flex-col gap-0 items-center justify-center min-h-[70vh] p-0 sm:p-0">

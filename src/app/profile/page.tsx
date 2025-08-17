@@ -1,7 +1,7 @@
 "use client";
 
-
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 type User = {
   name: string;
@@ -46,7 +46,7 @@ export default function ProfilePage() {
   			<div className="text-center mb-8">
   				<h1 className="text-3xl font-bold text-gray-900 mb-4">Profile</h1>
   				<div className="flex items-center justify-center text-gray-600 py-4">
-  					<a href="/" className="hover:text-blue-600 transition-colors duration-300">Home</a>
+  					<Link href="/" className="hover:text-blue-600 transition-colors duration-300">Home</Link>
   					<span className="mx-3">/</span>
   					<span className="text-blue-600">Profile</span>
   				</div>

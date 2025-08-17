@@ -1,6 +1,5 @@
 "use client";
 import Image from 'next/image';
-import { theme } from '../app/theme';
 import { etarBellotaFont } from '../app/etarBellotaFont';
 
 export default function Footer() {

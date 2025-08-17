@@ -52,7 +52,7 @@ const CartPage = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Your Cart</h1>
           <div className="flex items-center justify-center text-[#bdbdbd] py-6">
-            <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
+            <Link href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</Link>
             <span className="mx-3">/</span>
             <span className="text-[#e2b279]">Cart</span>
           </div>

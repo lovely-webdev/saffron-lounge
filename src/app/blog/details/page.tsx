@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const BlogDetailsPage = () => {
   // Sample blog post data
@@ -70,9 +71,9 @@ const BlogDetailsPage = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blog Details</h1>
           <div className="flex items-center justify-center text-[#bdbdbd] py-6">
-            <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
+            <Link href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</Link>
             <span className="mx-3">/</span>
-            <a href="/blog" className="hover:text-[#e2b279] transition-colors duration-300">Blog</a>
+            <Link href="/blog" className="hover:text-[#e2b279] transition-colors duration-300">Blog</Link>
             <span className="mx-3">/</span>
             <span className="text-[#e2b279]">Blog Details</span>
           </div>

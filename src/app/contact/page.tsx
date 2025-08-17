@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { theme } from "../../app/theme";
+import Link from "next/link";
 import { etarBellotaFont } from "../../app/etarBellotaFont";
 
 export default function ContactPage() {
@@ -41,7 +41,7 @@ export default function ContactPage() {
                 CONTACT US
               </h1>
               <div className="flex items-center justify-center text-[#bdbdbd] py-6">
-                <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
+                <Link href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</Link>
                 <span className="mx-3">/</span>
                 <span className="text-[#e2b279]">Contact Us</span>
               </div>

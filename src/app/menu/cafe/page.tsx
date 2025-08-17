@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { etarBellotaFont } from '../../../app/etarBellotaFont';
 
 const CafeMenuPage = () => {
@@ -43,7 +44,7 @@ const CafeMenuPage = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Our Cafe Menu</h1>
           <div className="flex items-center justify-center text-[#bdbdbd] py-6">
-            <a href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</a>
+            <Link href="/" className="hover:text-[#e2b279] transition-colors duration-300">Home</Link>
             <span className="mx-3">/</span>
             <span className="text-[#e2b279]">Cafe Menu</span>
           </div>

@@ -1,12 +1,21 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TeamProfiles from '@/components/Home/TeamProfiles';
 import { getTeamMembers } from '@/lib/teamData';
 import { TeamMember } from '@/types/team';
 
-const TeamPage = async () => {
-  const teamMembers: TeamMember[] = await getTeamMembers();
+const TeamPage = () => {
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+
+  useEffect(() => {
+    const fetchTeamMembers = async () => {
+      const members = await getTeamMembers();
+      setTeamMembers(members);
+    };
+    
+    fetchTeamMembers();
+  }, []);
 
   return (
     <TeamProfiles
