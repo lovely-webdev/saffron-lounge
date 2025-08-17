@@ -1,0 +1,23 @@
+[
+  {
+    "id": "679lh1at09emeed86jk",
+    "title": "First Product",
+    "slug": "first-product",
+    "description": "it's just dummy information",
+    "type": "simple",
+    "sku": "",
+    "price": 399,
+    "salePrice": 399,
+    "images": [
+      "https://templates.hibotheme.com/etar/default/assets/img/blog/blog-1.webp"
+    ],
+    "inStock": true,
+    "stockQty": 10,
+    "attributes": [],
+    "variations": [],
+    "groupedProducts": [],
+    "linkedProducts": [],
+    "createdAt": "2025-08-16T14:41:46.015Z",
+    "updatedAt": "2025-08-16T14:41:46.015Z"
+  }
+]
