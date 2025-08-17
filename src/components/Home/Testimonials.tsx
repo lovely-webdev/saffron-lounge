@@ -10,24 +10,21 @@ const Testimonials = () => {
       name: "Sarah Johnson",
       role: "Food Critic",
       content: "The culinary experience at Etar is unparalleled. Every dish is a masterpiece of flavor and presentation. The attention to detail is remarkable.",
-      rating: 5,
-      avatar: "/assets/img/testimonial/testimonial-1.webp"
+      rating: 5
     },
     {
       id: 2,
       name: "Michael Chen",
       role: "Regular Customer",
       content: "I've been dining here for over three years, and the quality has never wavered. The seasonal menu changes keep things exciting.",
-      rating: 5,
-      avatar: "/assets/img/testimonial/testimonial-2.webp"
+      rating: 5
     },
     {
       id: 3,
       name: "Emma Rodriguez",
       role: "Restaurant Blogger",
       content: "Etar exceeded all my expectations. The ambiance, service, and of course, the food, make this place a true gem in the culinary scene.",
-      rating: 5,
-      avatar: "/assets/img/testimonial/testimonial-3.webp"
+      rating: 5
     }
   ];
 
@@ -63,17 +60,6 @@ const Testimonials = () => {
               <p className="text-[#bdbdbd] text-lg mb-6 italic">"{testimonial.content}"</p>
               
               <div className="flex items-center">
-                <div className="flex-shrink-0 mr-4">
-                  <div className="relative overflow-hidden rounded-full">
-                    <Image
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      width={60}
-                      height={60}
-                      className="object-cover w-[60px] h-[60px] transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                </div>
                 <div>
                   <h4 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{testimonial.name}</h4>
                   <p className="text-[#e2b279]">{testimonial.role}</p>

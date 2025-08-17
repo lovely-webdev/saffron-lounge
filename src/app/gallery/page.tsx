@@ -16,9 +16,7 @@ const GalleryPage = () => {
     { id: 3, image: '/assets/img/gallery/gallery-3.webp', category: 'Drinks' },
     { id: 4, image: '/assets/img/gallery/gallery-4.webp', category: 'Restaurant' },
     { id: 5, image: '/assets/img/gallery/gallery-5.webp', category: 'Events' },
-    { id: 6, image: '/assets/img/gallery/gallery-6.webp', category: 'Food' },
-    { id: 7, image: '/assets/img/menu/menu-1.webp', category: 'Food' },
-    { id: 8, image: '/assets/img/menu/menu-2.webp', category: 'Food' },
+    { id: 6, image: '/assets/img/gallery/gallery-6.webp', category: 'Food' }
   ];
 
   // Filter items based on active category

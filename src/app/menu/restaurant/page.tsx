@@ -13,10 +13,7 @@ const RestaurantMenuPage = () => {
   // Sample menu items for each category
   const menuItems = {
     Starter: [
-      { id: 1, name: 'Chicken Burger', price: '$25.00', image: '/assets/img/menu/menu-1.webp', description: 'Chicken breast, cheddar cheese, lettuce, tomato' },
-      { id: 2, name: 'Veggie Burger', price: '$22.00', image: '/assets/img/menu/menu-2.webp', description: 'Grilled vegetables, hummus, fresh herbs' },
-      { id: 3, name: 'Fish Burger', price: '$28.00', image: '/assets/img/menu/menu-3.webp', description: 'Fresh salmon, dill sauce, cucumber' },
-      { id: 4, name: 'Beef Burger', price: '$30.00', image: '/assets/img/menu/menu-4.webp', description: 'Beef patty, bacon, special sauce' },
+      // Removed items with missing images (1-4)
     ],
     Dishes: [
       { id: 5, name: 'Grilled Salmon', price: '$32.00', image: '/assets/img/menu/menu-5.webp', description: 'Fresh salmon with lemon butter sauce' },
@@ -72,34 +69,40 @@ const RestaurantMenuPage = () => {
 
         {/* Menu Items */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {menuItems[activeCategory as keyof typeof menuItems]?.map((item) => (
-            <div 
-              key={item.id} 
-              className="flex gap-6 p-6 bg-[#18181c] rounded-lg border border-[#23232a] hover:border-[#e2b279] transition-all duration-300 group"
-            >
-              <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-                <Image 
-                  src={item.image} 
-                  alt={item.name} 
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex-1">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#e2b279] transition-colors duration-300">{item.name}</h3>
-                  <span className="text-xl font-bold text-[#e2b279]">{item.price}</span>
+          {menuItems[activeCategory as keyof typeof menuItems]?.length > 0 ? (
+            menuItems[activeCategory as keyof typeof menuItems]?.map((item) => (
+              <div
+                key={item.id}
+                className="flex gap-6 p-6 bg-[#181c] rounded-lg border border-[#23232a] hover:border-[#e2b279] transition-all duration-300 group"
+              >
+                <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <p className="text-[#bdbdbd] mb-3">{item.description}</p>
-                <button className="text-[#e2b279] font-bold hover:text-white transition-colors duration-300 flex items-center">
-                  Add to Cart
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                  </svg>
-                </button>
+                <div className="flex-1">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-[#e2b279] transition-colors duration-300">{item.name}</h3>
+                    <span className="text-xl font-bold text-[#e2b279]">{item.price}</span>
+                  </div>
+                  <p className="text-[#bdbdbd] mb-3">{item.description}</p>
+                  <button className="text-[#e2b279] font-bold hover:text-white transition-colors duration-300 flex items-center">
+                    Add to Cart
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
+            ))
+          ) : (
+            <div className="col-span-2 text-center py-12">
+              <p className="text-xl text-[#bdbdbd]">No items available in this category</p>
             </div>
-          ))}
+          )}
         </div>
       </div>
     </section>

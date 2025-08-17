@@ -5,29 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Truffle Pasta",
-      price: 24.99,
-      quantity: 2,
-      image: "/assets/img/menu/menu-1.webp"
-    },
-    {
-      id: 2,
-      name: "Grilled Salmon",
-      price: 28.99,
-      quantity: 1,
-      image: "/assets/img/menu/menu-2.webp"
-    },
-    {
-      id: 3,
-      name: "Chocolate Soufflé",
-      price: 12.99,
-      quantity: 3,
-      image: "/assets/img/menu/menu-3.webp"
-    }
-  ]);
+  const [cartItems, setCartItems] = useState<any[]>([]);
 
   const updateQuantity = (id: number, newQuantity: number) => {
     if (newQuantity < 1) return;

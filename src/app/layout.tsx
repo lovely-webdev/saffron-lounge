@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Rubik, Oxygen, Playfair_Display } from "next/font/google";
 import { etarBellotaFont } from "./etarBellotaFont";
+import { etarFont } from "./etarFont";
+import { etarMenuFont } from "./etarMenuFont";
 import "./globals.css";
 import ConditionalThemeToggle from "../components/ConditionalThemeToggle";
 import Header from "../components/Header";
@@ -75,8 +77,8 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
-        className={`${rubik.variable} ${oxygen.variable} ${etarBellotaFont.variable} ${playfair.variable} antialiased`}
-        style={{ fontFamily: 'var(--font-rubik), var(--font-oxygen), var(--font-bellota), sans-serif' }}
+        className={`${rubik.variable} ${oxygen.variable} ${etarBellotaFont.variable} ${etarFont.variable} ${etarMenuFont.variable} ${playfair.variable} antialiased`}
+        style={{ fontFamily: 'var(--font-rubik), var(--font-oxygen), var(--font-etar-bellota), sans-serif' }}
       >
         <script
           dangerouslySetInnerHTML={{

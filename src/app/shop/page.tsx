@@ -11,38 +11,6 @@ const ShopPage = () => {
   // Sample shop items
   const shopItems = [
     {
-      id: 1,
-      name: "Truffle Pasta",
-      price: "$24.99",
-      image: "/assets/img/menu/menu-1.webp",
-      category: "Main Course",
-      rating: 4.8
-    },
-    {
-      id: 2,
-      name: "Grilled Salmon",
-      price: "$28.99",
-      image: "/assets/img/menu/menu-2.webp",
-      category: "Main Course",
-      rating: 4.9
-    },
-    {
-      id: 3,
-      name: "Chocolate Soufflé",
-      price: "$12.99",
-      image: "/assets/img/menu/menu-3.webp",
-      category: "Desserts",
-      rating: 4.7
-    },
-    {
-      id: 4,
-      name: "Caesar Salad",
-      price: "$14.99",
-      image: "/assets/img/menu/menu-4.webp",
-      category: "Appetizers",
-      rating: 4.6
-    },
-    {
       id: 5,
       name: "Beef Steak",
       price: "$36.99",

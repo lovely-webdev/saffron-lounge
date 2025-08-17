@@ -12,10 +12,7 @@ const RestaurantMenuPage = () => {
   // Sample menu items for each category
   const menuItems = {
     Starter: [
-      { id: 1, name: 'Chicken Burger', price: '$25.00', image: '/assets/img/menu/menu-1.webp', description: 'Chicken breast, cheddar cheese, lettuce, tomato' },
-      { id: 2, name: 'Veggie Burger', price: '$22.00', image: '/assets/img/menu/menu-2.webp', description: 'Grilled vegetables, hummus, fresh herbs' },
-      { id: 3, name: 'Fish Burger', price: '$28.00', image: '/assets/img/menu/menu-3.webp', description: 'Fresh salmon, dill sauce, cucumber' },
-      { id: 4, name: 'Beef Burger', price: '$30.00', image: '/assets/img/menu/menu-4.webp', description: 'Beef patty, bacon, special sauce' },
+      // Removed items with missing images (1-4)
     ],
     Dishes: [
       { id: 5, name: 'Grilled Salmon', price: '$32.00', image: '/assets/img/menu/menu-5.webp', description: 'Fresh salmon with lemon butter sauce' },

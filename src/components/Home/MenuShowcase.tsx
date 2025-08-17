@@ -11,10 +11,7 @@ const MenuShowcase = () => {
   // Sample menu items for each category
   const menuItems = {
     Starter: [
-      { id: 1, name: 'Chicken Burger', price: '$25.00', image: '/assets/img/menu/menu-1.webp', description: 'Chicken breast, cheddar cheese, lettuce, tomato' },
-      { id: 2, name: 'Veggie Burger', price: '$22.00', image: '/assets/img/menu/menu-2.webp', description: 'Grilled vegetables, hummus, fresh herbs' },
-      { id: 3, name: 'Fish Burger', price: '$28.00', image: '/assets/img/menu/menu-3.webp', description: 'Fresh salmon, dill sauce, cucumber' },
-      { id: 4, name: 'Beef Burger', price: '$30.00', image: '/assets/img/menu/menu-4.webp', description: 'Beef patty, bacon, special sauce' },
+      // Removed items with missing images (1-4)
     ],
     Dishes: [
       { id: 5, name: 'Grilled Salmon', price: '$32.00', image: '/assets/img/menu/menu-5.webp', description: 'Fresh salmon with lemon butter sauce' },
@@ -65,37 +62,43 @@ const MenuShowcase = () => {
         
         {/* Menu Items */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {menuItems[activeCategory as keyof typeof menuItems].map((item) => (
-            <div
-              key={item.id}
-              className="flex gap-6 p-6 bg-[#18181c] rounded-lg border border-[#23232a] hover:border-[#e2b279] transition-all duration-300 group"
-            >
-              <div className="flex-shrink-0">
-                <div className="relative overflow-hidden rounded-lg">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={120}
-                    height={120}
-                    className="object-cover w-[120px] h-[120px] transition-transform duration-500 group-hover:scale-110"
-                  />
+          {menuItems[activeCategory as keyof typeof menuItems]?.length > 0 ? (
+            menuItems[activeCategory as keyof typeof menuItems].map((item) => (
+              <div
+                key={item.id}
+                className="flex gap-6 p-6 bg-[#18181c] rounded-lg border border-[#23232a] hover:border-[#e2b279] transition-all duration-300 group"
+              >
+                <div className="flex-shrink-0">
+                  <div className="relative overflow-hidden rounded-lg">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={120}
+                      height={120}
+                      className="object-cover w-[120px] h-[120px] transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{item.name}</h3>
+                    <span className="text-xl font-bold text-[#e2b279]">{item.price}</span>
+                  </div>
+                  <p className="text-[#bdbdbd] text-base mb-4">{item.description}</p>
+                  <button className="text-[#e2b279] font-bold text-base flex items-center group">
+                    Add to Cart
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-              <div className="flex-grow">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{item.name}</h3>
-                  <span className="text-xl font-bold text-[#e2b279]">{item.price}</span>
-                </div>
-                <p className="text-[#bdbdbd] text-base mb-4">{item.description}</p>
-                <button className="text-[#e2b279] font-bold text-base flex items-center group">
-                  Add to Cart
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-              </div>
+            ))
+          ) : (
+            <div className="col-span-2 text-center py-12">
+              <p className="text-xl text-[#bdbdbd]">No items available in this category</p>
             </div>
-          ))}
+          )}
         </div>
         
         {/* View All Menu Button */}

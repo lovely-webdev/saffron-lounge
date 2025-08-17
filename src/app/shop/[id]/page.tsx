@@ -17,9 +17,7 @@ const ShopDetailsPage = () => {
     rating: 4.8,
     reviews: 24,
     images: [
-      "/assets/img/menu/menu-1.webp",
-      "/assets/img/menu/menu-2.webp",
-      "/assets/img/menu/menu-3.webp"
+      // Removed references to missing images (1-4)
     ],
     ingredients: [
       "Fresh pasta",
@@ -31,29 +29,7 @@ const ShopDetailsPage = () => {
     ]
   };
 
-  const relatedProducts = [
-    {
-      id: 2,
-      name: "Grilled Salmon",
-      price: "$28.99",
-      image: "/assets/img/menu/menu-2.webp",
-      rating: 4.9
-    },
-    {
-      id: 3,
-      name: "Chocolate Soufflé",
-      price: "$12.99",
-      image: "/assets/img/menu/menu-3.webp",
-      rating: 4.7
-    },
-    {
-      id: 4,
-      name: "Caesar Salad",
-      price: "$14.99",
-      image: "/assets/img/menu/menu-4.webp",
-      rating: 4.6
-    }
-  ];
+ const relatedProducts: any[] = [];
 
   const incrementQuantity = () => setQuantity(prev => prev + 1);
   const decrementQuantity = () => setQuantity(prev => (prev > 1 ? prev - 1 : 1));
@@ -71,30 +47,38 @@ const ShopDetailsPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
           <div>
-            <div className="relative h-96 rounded-lg overflow-hidden mb-6">
-              <Image
-                src={product.images[selectedImage]}
-                alt={product.name}
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              {product.images.map((image, index) => (
-                <div 
-                  key={index}
-                  className={`relative h-24 rounded-lg overflow-hidden cursor-pointer border-2 ${selectedImage === index ? 'border-[#e2b279]' : 'border-[#23232a]'}`}
-                  onClick={() => setSelectedImage(index)}
-                >
+            {product.images.length > 0 ? (
+              <>
+                <div className="relative h-96 rounded-lg overflow-hidden mb-6">
                   <Image
-                    src={image}
-                    alt={`${product.name} ${index + 1}`}
+                    src={product.images[selectedImage]}
+                    alt={product.name}
                     fill
                     className="object-cover"
                   />
                 </div>
-              ))}
-            </div>
+                <div className="grid grid-cols-3 gap-4">
+                  {product.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`relative h-24 rounded-lg overflow-hidden cursor-pointer border-2 ${selectedImage === index ? 'border-[#e2b279]' : 'border-[#23232a]'}`}
+                      onClick={() => setSelectedImage(index)}
+                    >
+                      <Image
+                        src={image}
+                        alt={`${product.name} ${index + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <div className="h-96 rounded-lg overflow-hidden mb-6 bg-[#18181c] flex items-center justify-center">
+                <span className="text-[#bdbdbd]">No images available</span>
+              </div>
+            )}
           </div>
           
           {/* Product Details */}
