@@ -22,7 +22,6 @@ const TeamPage = () => {
       members={teamMembers}
       title="Our Team"
       description="Meet the passionate professionals who make our restaurant exceptional"
-      showBreadcrumbs={true}
       variant="page"
     />
   );
