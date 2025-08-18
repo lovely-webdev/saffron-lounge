@@ -4,108 +4,140 @@ import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const MenuShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState('Starter');
+  const [activeCategory, setActiveCategory] = useState('Dishes');
   
   const categories = ['Starter', 'Dishes', 'Desserts', 'Drink & Wines'];
   
-  // Sample menu items for each category
+  // Sample menu items for each category using only definitely available assets-main images
   const menuItems = {
     Starter: [
-      // Removed items with missing images (1-4)
+      { id: 1, name: 'Foie Gras', price: '$40.00', image: '/assests-main/recipe-1.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 2, name: 'Spring Rolls', price: '$18.00', image: '/assests-main/recipe-2.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 3, name: 'Bruschetta', price: '$22.00', image: '/assests-main/recipe-3.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
     ],
     Dishes: [
-      { id: 5, name: 'Grilled Salmon', price: '$32.00', image: '/assets/img/menu/menu-5.webp', description: 'Fresh salmon with lemon butter sauce' },
-      { id: 6, name: 'Ribeye Steak', price: '$45.00', image: '/assets/img/menu/menu-6.webp', description: 'Premium ribeye with garlic mashed potatoes' },
-      { id: 7, name: 'Chicken Parmesan', price: '$28.00', image: '/assets/img/menu/menu-7.webp', description: 'Breaded chicken with marinara and mozzarella' },
-      { id: 8, name: 'Vegetable Stir Fry', price: '$24.00', image: '/assets/img/menu/menu-8.webp', description: 'Seasonal vegetables with tofu in ginger sauce' },
+      { id: 4, name: 'Foie GLyonnaise Saladras', price: '$30.00', image: '/assests-main/recipe-4.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 5, name: 'Chicken Skewers', price: '$40.00', image: '/assests-main/recipe-5.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 6, name: 'Grilled Salmon', price: '$45.00', image: '/assests-main/recipe-6.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
     ],
     Desserts: [
-      { id: 9, name: 'Chocolate Cake', price: '$12.00', image: '/assets/img/menu/menu-9.webp', description: 'Rich chocolate cake with ganache' },
-      { id: 10, name: 'Tiramisu', price: '$10.00', image: '/assets/img/menu/menu-10.webp', description: 'Classic Italian dessert with espresso' },
-      { id: 11, name: 'Cheesecake', price: '$11.00', image: '/assets/img/menu/menu-11.webp', description: 'New York style with berry compote' },
-      { id: 12, name: 'Ice Cream', price: '$8.00', image: '/assets/img/menu/menu-12.webp', description: 'Vanilla bean with caramel sauce' },
+      { id: 7, name: 'Chocolate Cake', price: '$18.00', image: '/assests-main/recipe-7.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 8, name: 'Tiramisu', price: '$16.00', image: '/assests-main/cat-1.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 9, name: 'Cheesecake', price: '$14.00', image: '/assests-main/cat-2.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
     ],
     'Drink & Wines': [
-      { id: 13, name: 'Red Wine', price: '$12.00', image: '/assets/img/menu/menu-13.webp', description: 'Glass of premium Cabernet Sauvignon' },
-      { id: 14, name: 'White Wine', price: '$11.00', image: '/assets/img/menu/menu-14.webp', description: 'Glass of Chardonnay' },
-      { id: 15, name: 'Craft Beer', price: '$8.00', image: '/assets/img/menu/menu-15.webp', description: 'Local IPA on tap' },
-      { id: 16, name: 'Signature Cocktail', price: '$15.00', image: '/assets/img/menu/menu-16.webp', description: 'House special with premium spirits' },
+      { id: 10, name: 'Red Wine', price: '$25.00', image: '/assests-main/cat-3.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 11, name: 'White Wine', price: '$22.00', image: '/assests-main/cat-4.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 12, name: 'Craft Beer', price: '$12.00', image: '/assests-main/cat-5.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
     ]
   };
 
   return (
     <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
       <div className="max-w-full mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Our Menu</h2>
-          <p className="text-xl text-[#bdbdbd] max-w-3xl mx-auto">
-            Discover our carefully crafted dishes made with the finest ingredients and culinary expertise
-          </p>
-        </div>
-        
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full text-lg font-bold transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-[#e2b279] text-[#111115]'
-                  : 'bg-[#18181c] text-white hover:bg-[#23232a]'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        
-        {/* Menu Items */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {menuItems[activeCategory as keyof typeof menuItems]?.length > 0 ? (
-            menuItems[activeCategory as keyof typeof menuItems].map((item) => (
-              <div
-                key={item.id}
-                className="flex gap-6 p-6 bg-[#18181c] rounded-lg border border-[#23232a] hover:border-[#e2b279] transition-all duration-300 group"
-              >
-                <div className="flex-shrink-0">
-                  <div className="relative overflow-hidden rounded-lg">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={120}
-                      height={120}
-                      className="object-cover w-[120px] h-[120px] transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                </div>
-                <div className="flex-grow">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{item.name}</h3>
-                    <span className="text-xl font-bold text-[#e2b279]">{item.price}</span>
-                  </div>
-                  <p className="text-[#bdbdbd] text-base mb-4">{item.description}</p>
-                  <button className="text-[#e2b279] font-bold text-base flex items-center group">
-                    Add to Cart
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          {/* Left side - Title and Main Dish Image */}
+          <div className="relative">
+            {/* Title */}
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-10 leading-tight" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+              <span className="block mb-2">From Our</span>
+              <span className="block">Restaurant Menu</span>
+            </h2>
+            
+            {/* Main Dish Image */}
+            <div className="relative">
+              <div className="relative rounded-lg overflow-hidden transform rotate-3">
+                <Image
+                  src="/assests-main/recipe-1.webp"
+                  alt="Main dish - Biryani with chicken"
+                  width={500}
+                  height={400}
+                  className="object-cover w-full h-auto"
+                  priority
+                />
               </div>
-            ))
-          ) : (
-            <div className="col-span-2 text-center py-12">
-              <p className="text-xl text-[#bdbdbd]">No items available in this category</p>
+              
+              {/* Decorative green leafy branch */}
+              <div className="absolute -bottom-10 -left-10 w-36 h-44 opacity-90">
+                <Image
+                  src="/assests-main/about-shape-1.webp"
+                  alt="Decorative leafy branch"
+                  width={144}
+                  height={176}
+                  className="object-contain w-full h-full"
+                />
+              </div>
             </div>
-          )}
-        </div>
-        
-        {/* View All Menu Button */}
-        <div className="text-center">
-          <button className="px-8 py-4 bg-[#e2b279] text-[#111115] font-bold text-lg rounded-full hover:bg-[#111115] hover:text-[#e2b279] border-2 border-[#e2b279] transition-all duration-300">
-            View All Menu
-          </button>
+          </div>
+          
+          {/* Right side - Menu Categories and Items */}
+          <div className="relative">
+            {/* Category Filters */}
+            <div className="flex flex-wrap gap-4 mb-14">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-6 py-3 rounded-full text-lg font-bold transition-all duration-300 ${
+                    activeCategory === category
+                      ? 'bg-[#e2b279] text-[#111115]'
+                      : 'bg-[#18181c] text-white hover:bg-[#23232a]'
+                  }`}
+                  style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}
+                >
+                  {category}
+                </button>
+              ))}
+              <button 
+                className="px-6 py-3 rounded-full text-lg font-bold bg-transparent text-white border border-white hover:bg-white hover:text-[#111115] transition-all duration-300"
+                style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}
+              >
+                View All Menu
+              </button>
+            </div>
+            
+            {/* Menu Items */}
+            <div className="space-y-10">
+              {menuItems[activeCategory as keyof typeof menuItems]?.slice(0, 3).map((item) => (
+                <div
+                  key={item.id}
+                  className="flex gap-6 items-start"
+                >
+                  {/* Menu Item Image */}
+                  <div className="flex-shrink-0">
+                    <div className="relative overflow-hidden rounded-lg">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        width={80}
+                        height={80}
+                        className="object-cover w-20 h-20"
+                        onError={(e) => {
+                          // Fallback to a default image if the specified one fails
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/assests-main/recipe-1.webp';
+                        }}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Menu Item Content */}
+                  <div className="flex-grow">
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+                        {item.name}
+                      </h3>
+                      <span className="text-xl font-bold text-[#e2b279]" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{item.price}</span>
+                    </div>
+                    <div className="w-full border-b border-dashed border-[#e2b279] mb-4"></div>
+                    <p className="text-white text-base leading-relaxed max-w-xs">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
