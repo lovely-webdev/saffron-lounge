@@ -47,7 +47,6 @@ export default function Home() {
       />
       <Reservation />
       <BlogSection />
-      <ContactSection />
     </main>
   );
 }
