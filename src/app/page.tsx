@@ -6,12 +6,14 @@ import FeaturedList from "@/components/Home/FeaturedList";
 import AboutSection from "@/components/Home/AboutSection";
 import FeatureHighlights from "@/components/Home/FeatureHighlights";
 import MenuShowcase from "@/components/Home/MenuShowcase";
+import FoodCategories from "@/components/Home/FoodCategories";
 import FoodGallery from "@/components/Home/FoodGallery";
+import VideoSection from "@/components/Home/VideoSection";
 import Testimonials from "@/components/Home/Testimonials";
 import TeamProfiles from "@/components/Home/TeamProfiles";
 import Reservation from "@/components/Home/Reservation";
 import BlogSection from "@/components/Home/BlogSection";
-import VideoSection from "@/components/Home/VideoSection";
+import ContactSection from "@/components/Home/ContactSection";
 import { getTeamMembers } from '@/lib/teamData';
 import { TeamMember } from '@/types/team';
 
@@ -33,6 +35,7 @@ export default function Home() {
       <FeaturedList />
       <AboutSection />
       <MenuShowcase />
+      <FoodCategories />
       <FoodGallery />
       <VideoSection />
       <Testimonials />
@@ -44,6 +47,7 @@ export default function Home() {
       />
       <Reservation />
       <BlogSection />
+      <ContactSection />
     </main>
   );
 }
