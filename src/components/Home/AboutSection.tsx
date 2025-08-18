@@ -7,73 +7,52 @@ const AboutSection = () => {
   return (
     <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
       <div className="max-w-full mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>DELICIUM RESTORACIA AWESOME FOOD FOR YOU</h2>
-            <p className="text-xl text-[#bdbdbd] mb-8">
-              Our restaurant offers a unique dining experience with a blend of traditional and modern culinary techniques. We source the finest ingredients locally and globally to create dishes that delight the senses.
-            </p>
-            
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#e2b279] bg-opacity-10 flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-[#e2b279]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Premium Ingredients</h3>
-                  <p className="text-[#bdbdbd]">We source only the finest ingredients from trusted local suppliers and international markets.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#e2b279] bg-opacity-10 flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-[#e2b279]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Expert Chefs</h3>
-                  <p className="text-[#bdbdbd]">Our team of award-winning chefs bring years of experience and creativity to every dish.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#e2b279] bg-opacity-10 flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-[#e2b279]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Exceptional Service</h3>
-                  <p className="text-[#bdbdbd]">Our attentive staff ensures every guest enjoys a memorable dining experience from start to finish.</p>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left side - Image */}
+          <div className="relative">
+            <div className="relative rounded-lg overflow-hidden">
+              <Image
+                src="/assests-main/about-img-1.webp"
+                alt="Two women dining at restaurant"
+                width={600}
+                height={500}
+                className="object-cover w-full h-auto"
+              />
             </div>
-            
-            <button className="px-8 py-4 bg-[#e2b279] text-[#111115] font-bold text-lg rounded-lg hover:bg-[#111115] hover:text-[#e2b279] border-2 border-[#e2b279] transition-all duration-300">
-              Discover More
-            </button>
           </div>
           
-          <div className="relative">
-            <div className="relative rounded-lg overflow-hidden aspect-video">
+          {/* Right side - Text content */}
+          <div className="relative pr-16">
+            {/* Decorative green leafy branch using the actual image */}
+            <div className="absolute -right-4 top-0 w-32 h-40 opacity-90">
               <Image
-                src="/assets/img/gallery/gallery-4.webp"
-                alt="Our Restaurant"
-                fill
-                className="object-cover"
+                src="/assests-main/about-shape-1.webp"
+                alt="Decorative leafy branch"
+                width={128}
+                height={160}
+                className="object-contain w-full h-full"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-lg overflow-hidden border-4 border-[#111115] hidden md:block">
-              <Image
-                src="/assets/img/gallery/gallery-2.webp"
-                alt="Our Chef"
-                fill
-                className="object-cover"
-              />
+            
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+              <span className="block mb-2">Delicium</span>
+              <span className="block mb-2">Restoracia</span>
+              <span className="block mb-2">Awesome Food For</span>
+              <span className="block">You</span>
+            </h2>
+            
+            <div className="space-y-4 mb-10">
+              <p className="text-lg text-white leading-relaxed max-w-lg">
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+              </p>
+              <p className="text-lg text-white leading-relaxed max-w-lg">
+                If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+              </p>
             </div>
+            
+            <button className="px-10 py-4 bg-[#e2b279] text-[#111115] font-bold text-lg rounded-lg hover:bg-[#d4a46a] transition-all duration-300">
+              Read More
+            </button>
           </div>
         </div>
       </div>
