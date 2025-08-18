@@ -4,160 +4,128 @@ import { etarBellotaFont } from "@/app/etarBellotaFont";
 export default function HeroBanner() {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-24 lg:py-36"
+      className="relative w-full min-h-screen overflow-hidden flex items-center justify-center pt-20 pb-20"
       style={{
-        backgroundColor: '#18171d',
-        backgroundImage: "url('/assests-main/hero-bg-shape.webp')",
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        background: `url('/assests-main/hero-bg-shape.webp') center center / cover no-repeat, #18171d`,
       }}
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
-
-      {/* Left side image */}
-      <div className="hidden lg:block absolute left-12 bottom-40 z-20 animate-float">
+      {/* Girl Image (left, vertically centered) */}
+      <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-20">
+        <Image
+          src="/assests-main/blog-1.webp"
+          alt="Girl"
+          width={260}
+          height={320}
+          className="rounded-2xl shadow-2xl object-cover border-4 border-[#18171d]"
+        />
+      </div>
+      {/* Dish Image (right, vertically centered) */}
+      <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-20">
+        <Image
+          src="/assests-main/recipe-1.webp"
+          alt="Dish"
+          width={180}
+          height={140}
+          className="rounded-2xl shadow-2xl object-cover border-4 border-[#18171d]"
+        />
+      </div>
+      {/* Headings */}
+      <span className={`hero-aesthetic absolute top-16 left-12 z-30 text-white ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Aesthetic</span>
+      <span className={`hero-joyof absolute top-24 right-16 z-30 text-white ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Joy Of</span>
+      {/* DELICIOUS Text (centered, behind chef image, refined weight) */}
+      <span className={`hero-delicious absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 select-none pointer-events-none ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+        DE<span className="text-white">LICIO</span>US
+      </span>
+      {/* Chef Image (center, above DELICIOUS) */}
+      <div className="relative z-30 flex flex-col items-center justify-center min-h-[60vh] pt-16">
         <Image
           src="/assests-main/hero-img-1.webp"
-          alt="Side Dish"
-          width={240}
-          height={240}
-          className="rounded-2xl shadow-2xl object-cover w-[240px] h-[240px] border-4 border-[#18171d]"
+          alt="Chef Serving"
+          width={700}
+          height={400}
+          className="rounded-3xl shadow-2xl border-[8px] border-[#18171d] object-cover w-full max-w-2xl mx-auto"
+          priority
         />
+        {/* Cuisine & Drinks */}
+        <span className={`hero-cuisine block mt-8 text-white text-center z-30 ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Cuisine & Drinks</span>
       </div>
-
-      {/* Right side image */}
-      <div className="hidden lg:block absolute right-12 top-40 z-20 animate-float-delayed">
+      {/* Book Now Circle */}
+      <div className="absolute right-8 bottom-8 z-40 flex flex-col items-center">
         <Image
-          src="/assets/img/gallery/gallery-2.webp"
-          alt="Side Dish"
-          width={200}
-          height={200}
-          className="rounded-2xl shadow-2xl object-cover w-[200px] h-[200px] border-4 border-[#18171d]"
+          src="/assets/img/hero/text-2.webp"
+          alt="Book Now Circle"
+          width={120}
+          height={120}
+          className="animate-spin-slow opacity-90"
+          priority
         />
+        <a
+          href="/book-a-table"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-[#e2b279] text-[#18171d] text-xl font-bold shadow-xl hover:bg-white hover:scale-110 hover:shadow-2xl transition-all duration-300"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
       </div>
-
-      <div className="relative z-20 w-full max-w-[1400px] mx-auto flex flex-col items-center justify-center min-h-screen px-4 py-20 sm:py-24">
-        {/* Headline and main image */}
-        <div className="relative w-full flex flex-col items-center justify-center">
-          <h1 className={`font-bold text-white text-center leading-tight relative z-30 ${etarBellotaFont.variable}`}>
-            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-4 animate-fade-down" style={{letterSpacing: '-0.04em', fontWeight: 900}}>
-              Aesthetic
-            </span>
-            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 animate-fade-down-delayed" style={{letterSpacing: '-0.04em', fontWeight: 900}}>
-              Joy Of
-            </span>
-          </h1>
-
-          {/* Main hero image with DELICIOUS text overlay */}
-          <div className="relative flex items-center justify-center w-full mt-4 mb-4 px-4 animate-fade-up">
-            <div className="relative w-full max-w-[900px]">
-              <Image
-                src="/assets/img/hero/hero-img-3.webp"
-                alt="Hero Main"
-                width={900}
-                height={500}
-                className="rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)] border-[12px] border-[#18171d] object-cover w-full aspect-[16/9]"
-                priority
-              />
-              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[60px] xs:text-[80px] sm:text-[120px] md:text-[150px] lg:text-[180px] xl:text-[200px] text-[#e2b279] font-black leading-none tracking-[-0.08em] pointer-events-none select-none mix-blend-overlay opacity-95 whitespace-nowrap animate-fade font-playfair">
-                DE<span className="text-white">LICIO</span>US
-              </span>
-            </div>
-          </div>
-
-          <h2 className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-6 tracking-tight text-white text-center animate-fade-up-delayed ${etarBellotaFont.variable}`} style={{letterSpacing: '-0.04em', fontWeight: 900}}>
-            Cuisine & Drinks
-          </h2>
-        </div>
-
-        {/* Circular Book Now text and button */}
-        <div className="absolute right-8 bottom-8 z-40">
-          <div className="relative w-28 h-28 lg:w-36 lg:h-36 flex items-center justify-center">
-            <Image
-              src="/assets/img/hero/text-2.webp"
-              alt="Book Now Circle"
-              width={144}
-              height={144}
-              className="w-full h-full animate-spin-slow opacity-90"
-              priority
-            />
-            <a
-              href="/book-a-table"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center rounded-full bg-[#e2b279] text-[#18171d] text-xl lg:text-2xl font-bold shadow-xl hover:bg-white hover:scale-110 hover:shadow-2xl transition-all duration-300"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
       <style jsx global>{`
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0px); }
+        .hero-aesthetic {
+          font-size: 110px;
+          line-height: 1;
+          text-align: left;
+          font-weight: 400;
         }
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+        .hero-joyof {
+          font-size: 60px;
+          line-height: 1;
+          text-align: right;
+          font-weight: 400;
         }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
+        .hero-delicious {
+          font-size: 178px;
+          font-weight: 400;
+          letter-spacing: -0.085em;
+          color: rgba(226, 178, 121, 0.9);
+          line-height: 1;
+          white-space: nowrap;
+          /* stronger outline, lighter fill for a carved look */
+          text-shadow:
+            0 0 0 #18171d,
+            2px 2px 0 #18171d,
+            -2px -2px 0 #18171d,
+            2px -2px 0 #18171d,
+            -2px 2px 0 #18171d,
+            0 4px 30px rgba(0,0,0,0.35);
         }
-        .animate-float-delayed {
-          animation: float 6s ease-in-out infinite;
-          animation-delay: 2s;
+        .hero-delicious span { color: #fff; }
+        .hero-cuisine {
+          font-size: 60px;
+          line-height: 1.1;
+          font-weight: 400;
         }
-        .animate-spin-slow {
-          animation: spin-slow 15s linear infinite;
+        @media (max-width: 1199px) {
+          .hero-aesthetic { font-size: 80px; }
+          .hero-joyof { font-size: 44px; }
+          .hero-delicious { font-size: 128px; }
+          .hero-delicious span { font-size: 128px; }
+          .hero-cuisine { font-size: 40px; }
         }
-        .animate-fade-down {
-          animation: fadeDown 1s ease-out forwards;
+        @media (max-width: 991px) {
+          .hero-aesthetic { font-size: 54px; left: 4vw; top: 4vw; }
+          .hero-joyof { font-size: 28px; right: 4vw; top: 10vw; }
+          .hero-delicious { font-size: 72px; }
+          .hero-delicious span { font-size: 72px; }
+          .hero-cuisine { font-size: 26px; }
         }
-        .animate-fade-down-delayed {
-          animation: fadeDown 1s ease-out forwards;
-          animation-delay: 0.3s;
+        @media (max-width: 767px) {
+          .hero-aesthetic { font-size: 34px; left: 2vw; top: 2vw; }
+          .hero-joyof { font-size: 18px; right: 2vw; top: 8vw; }
+          .hero-delicious { font-size: 38px; }
+          .hero-delicious span { font-size: 38px; }
+          .hero-cuisine { font-size: 18px; }
         }
-        .animate-fade-up {
-          animation: fadeUp 1s ease-out forwards;
-          animation-delay: 0.6s;
-        }
-        .animate-fade-up-delayed {
-          animation: fadeUp 1s ease-out forwards;
-          animation-delay: 0.9s;
-        }
-        .animate-fade {
-          animation: fade 1s ease-out forwards;
-          animation-delay: 1.2s;
-        }
-        @keyframes fadeDown {
-          from {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes fade {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
+        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 15s linear infinite; }
       `}</style>
     </section>
   );

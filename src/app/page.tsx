@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import HeroBanner from "@/components/Home/HeroBanner";
+import FeaturedList from "@/components/Home/FeaturedList";
 import AboutSection from "@/components/Home/AboutSection";
 import FeatureHighlights from "@/components/Home/FeatureHighlights";
 import MenuShowcase from "@/components/Home/MenuShowcase";
@@ -27,10 +28,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col gap-0 items-center justify-center min-h-[70vh] p-0 sm:p-0">
+    <main className="w-full flex flex-col gap-0 items-center justify-center min-h-[70vh] p-0 sm:p-0">
       <HeroBanner />
+      <FeaturedList />
       <AboutSection />
-      <FeatureHighlights />
       <MenuShowcase />
       <FoodGallery />
       <VideoSection />
