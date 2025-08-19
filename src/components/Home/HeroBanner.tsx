@@ -32,9 +32,9 @@ export default function HeroBanner() {
       {/* Headings */}
       <span className={`hero-aesthetic absolute top-16 left-12 z-30 text-white ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Aesthetic</span>
       <span className={`hero-joyof absolute top-24 right-16 z-30 text-white ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Joy Of</span>
-      {/* DELICIOUS Text (centered, behind chef image, refined weight) */}
-      <span className={`hero-delicious absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 select-none pointer-events-none ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
-        DE<span className="text-white">LICIO</span>US
+      {/* DELICIOUS Text (centered, above chef image) */}
+      <span className={`hero-delicious absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-40 select-none ${etarBellotaFont.variable}`} style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+       DE<span className="text-white">LICIO</span>US
       </span>
       {/* Chef Image (center, above DELICIOUS) */}
       <div className="relative z-30 flex flex-col items-center justify-center min-h-[60vh] pt-16">
