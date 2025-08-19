@@ -118,19 +118,18 @@ export default function HeroBanner() {
           z-index: 999;
         }
         .hero-cuisine {
-          font-size: 75px;
-          line-height: 1.1;
-          font-weight: 600 !important;
-        }
-        .hero-delicious {
-          font-size: 220px;
-          display: block;
-          letter-spacing: -0.05px;
-          text-align: center;
-          -webkit-text-fill-color: #e2b279;
-          -webkit-text-stroke: #fff;
-          margin-top: 4%;
-        }
+    font-size: 100px;
+    font-weight: 700 !important;
+}
+     .hero-delicious {
+    font: 900 clamp(3rem, 16vw, 14rem) / 1 "Abril Fatface", serif;
+    letter-spacing: .06em;
+    background: url(/path/your-photo.jpg) center / cover no-repeat;
+    background-clip: text !important;
+    -webkit-text-fill-color: #e2b279 !important;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, .3) !important;
+}
         .hero-delicious span {
           font: 900 clamp(3rem, 16vw, 14rem) / 1 "Abril Fatface", serif;
           letter-spacing: 0.06em;
