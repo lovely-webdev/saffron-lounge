@@ -6,7 +6,7 @@ export default function HeroBanner() {
     <section
       className="herobanner relative w-full min-h-screen overflow-hidden flex items-center justify-center pt-20 pb-20"
       style={{
-        background: `url('/assests-main/hero-bg-shape.webp') center center / cover no-repeat, #18171d`,
+        background: `url('/assests-main/hero-bg-shape.webp') center center / cover no-repeat, #000000`,
       }}
     >
       {/* Girl Image (left, vertically centered) */}
