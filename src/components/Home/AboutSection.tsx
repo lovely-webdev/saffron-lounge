@@ -6,10 +6,11 @@ import { etarBellotaFont } from '../../app/etarBellotaFont';
 const AboutSection = () => {
   return (
     <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
-      <div className="max-w-full mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-full mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
           {/* Left side - Image */}
-          <div className="relative">
+          <div className="relative mb-8 lg:mb-0">
             <div className="relative rounded-lg overflow-hidden">
               <Image
                 src="/assests-main/about-img-1.webp"
@@ -22,9 +23,10 @@ const AboutSection = () => {
           </div>
           
           {/* Right side - Text content */}
-          <div className="relative pr-16">
-            {/* Decorative green leafy branch using the actual image */}
-            <div className="absolute -right-4 top-0 w-32 h-40 opacity-90">
+          <div className="relative pr-0 lg:pr-16">
+            
+            {/* Decorative green leafy branch */}
+            <div className="absolute -right-4 top-0 w-24 sm:w-32 h-32 sm:h-40 opacity-90">
               <Image
                 src="/assests-main/about-shape-1.webp"
                 alt="Decorative leafy branch"
@@ -34,23 +36,25 @@ const AboutSection = () => {
               />
             </div>
             
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
-              <span className="block mb-2">Delicium</span>
-              <span className="block mb-2">Restoracia</span>
-              <span className="block mb-2">Awesome Food For</span>
-              <span className="block">You</span>
+            {/* Heading */}
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight" style={{ fontFamily: 'var(--font-el-messiri), sans-serif' }}>
+              <span className="block mb-1">Delicium Restoracia</span>
+              <span className="block mb-1">Awesome Food For You</span>
+        
             </h2>
             
-            <div className="space-y-4 mb-10">
-              <p className="text-lg text-white leading-relaxed max-w-lg">
+            {/* Paragraphs */}
+            <div className="space-y-4 mb-8">
+              <p className="text-base sm:text-lg text-white leading-relaxed max-w-lg" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
               </p>
-              <p className="text-lg text-white leading-relaxed max-w-lg">
+              <p className="text-base sm:text-lg text-white leading-relaxed max-w-lg" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
                 If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
               </p>
             </div>
             
-            <button className="px-10 py-4 bg-[#e2b279] text-[#111115] font-bold text-lg rounded-lg hover:bg-[#d4a46a] transition-all duration-300">
+            {/* Button */}
+            <button className="px-8 sm:px-10 py-3 sm:py-4 bg-[#e2b279] text-white font-bold text-base sm:text-lg rounded-lg hover:bg-[#d4a46a] transition-all duration-300" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
               Read More
             </button>
           </div>

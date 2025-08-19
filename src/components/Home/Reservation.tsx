@@ -133,12 +133,7 @@ const Reservation = () => {
               </div>
             </div>
             
-            {/* Decorative leafy branch */}
-            <div className="absolute bottom-0 right-0 w-48 h-48 opacity-60">
-              <svg viewBox="0 0 100 100" fill="currentColor" className="w-full h-full text-green-800">
-                <path d="M50 0C45 20 40 40 35 60C30 80 25 100 20 120C15 140 10 150 5 150C0 150 0 140 0 130C0 120 0 110 0 100C0 90 0 80 0 70C0 60 0 50 0 40C0 30 0 20 0 10C0 0 0 0 10 0C20 0 30 0 40 0C50 0 50 0 50 0Z"/>
-              </svg>
-            </div>
+           
           </div>
         </div>
       </div>

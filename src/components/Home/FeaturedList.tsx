@@ -30,45 +30,50 @@ export default function FeaturedList() {
   ];
 
   return (
-    <section className="w-full bg-[#18171d] py-20">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+    <section className="w-full bg-[#18171d] py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, idx) => (
-            <div key={item.title} className="relative px-8 py-12">
+            <div
+              key={item.title}
+              className="relative px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col items-start text-left"
+            >
               {/* vertical separator on large screens */}
               {idx < items.length - 1 && (
-                <span className="hidden lg:block absolute right-0 top-8 bottom-8 w-px bg-[#2a2a31]" />
+                <span className="hidden lg:block absolute right-0 top-6 bottom-6 w-px bg-[#2a2a31]" />
               )}
 
-              <div className="flex flex-col items-start text-left">
-                <div className="mb-6">
-                  <Image
-                    src={item.icon}
-                    alt={item.title}
-                    width={42}
-                    height={42}
-                    className="opacity-90"
-                  />
-                </div>
-
-                <h3
-                  className={`${etarBellotaFont.variable} text-white text-2xl md:text-3xl font-bold mb-4`}
-                  style={{ fontFamily: "var(--font-etar-bellota), sans-serif" }}
-                >
-                  {item.title}
-                </h3>
-
-                <p className="text-[#bdbdbd] leading-relaxed pr-2">
-                  {item.description}
-                </p>
-
-                <a
-                  href="#"
-                  className="mt-6 inline-block italic text-[#bdbdbd] hover:text-[#e2b279] transition-colors"
-                >
-                  Discover More
-                </a>
+              <div className="mb-6">
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={42}
+                  height={42}
+                  className="opacity-90"
+                />
               </div>
+
+              <h3
+                className={`${etarBellotaFont.variable} text-white text-xl sm:text-2xl md:text-3xl font-bold mb-4`}
+                style={{ fontFamily: 'var(--font-el-messiri)' }}
+              >
+                {item.title}
+              </h3>
+
+              <p
+                className="text-[#bdbdbd] leading-relaxed mb-4"
+                style={{ fontFamily: "var(--font-bellota), sans-serif" }}
+              >
+                {item.description}
+              </p>
+
+              <a
+                href="#"
+                className="mt-auto inline-block italic text-[#bdbdbd] hover:text-[#e2b279] transition-colors"
+                style={{ fontFamily: "var(--font-bellota), sans-serif" }}
+              >
+                Discover More
+              </a>
             </div>
           ))}
         </div>

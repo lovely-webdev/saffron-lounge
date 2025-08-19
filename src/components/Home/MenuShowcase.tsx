@@ -8,7 +8,6 @@ const MenuShowcase = () => {
   
   const categories = ['Starter', 'Dishes', 'Desserts', 'Drink & Wines'];
   
-  // Sample menu items for each category using only definitely available assets-main images
   const menuItems = {
     Starter: [
       { id: 1, name: 'Foie Gras', price: '$40.00', image: '/assests-main/recipe-1.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
@@ -34,31 +33,29 @@ const MenuShowcase = () => {
 
   return (
     <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
-      <div className="max-w-full mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-          {/* Left side - Title and Main Dish Image */}
-          <div className="relative">
-            {/* Title */}
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-10 leading-tight" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+          
+          {/* Left side - Banner */}
+          <div className="relative mb-12 lg:mb-0">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 sm:mb-10 leading-tight" style={{ fontFamily: 'var(--font-el-messiri)' }}>
               <span className="block mb-2">From Our</span>
               <span className="block">Restaurant Menu</span>
             </h2>
             
-            {/* Main Dish Image */}
             <div className="relative">
-              <div className="relative rounded-lg overflow-hidden transform rotate-3">
+              <div className="relative rounded-lg overflow-hidden transform rotate-2 sm:rotate-3">
                 <Image
                   src="/assests-main/recipe-1.webp"
-                  alt="Main dish - Biryani with chicken"
+                  alt="Main dish"
                   width={500}
                   height={400}
                   className="object-cover w-full h-auto"
                   priority
                 />
               </div>
-              
-              {/* Decorative green leafy branch */}
-              <div className="absolute -bottom-10 -left-10 w-36 h-44 opacity-90">
+
+              <div className="absolute -bottom-10 -left-10 w-24 sm:w-36 h-28 sm:h-44 opacity-90">
                 <Image
                   src="/assests-main/about-shape-1.webp"
                   alt="Decorative leafy branch"
@@ -69,16 +66,16 @@ const MenuShowcase = () => {
               </div>
             </div>
           </div>
-          
-          {/* Right side - Menu Categories and Items */}
+
+          {/* Right side - Menu Items */}
           <div className="relative">
-            {/* Category Filters */}
-            <div className="flex flex-wrap gap-4 mb-14">
+            {/* Categories */}
+            <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-14">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-3 rounded-full text-lg font-bold transition-all duration-300 ${
+                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg font-bold transition-all duration-300 ${
                     activeCategory === category
                       ? 'bg-[#e2b279] text-[#111115]'
                       : 'bg-[#18181c] text-white hover:bg-[#23232a]'
@@ -89,54 +86,51 @@ const MenuShowcase = () => {
                 </button>
               ))}
               <button 
-                className="px-6 py-3 rounded-full text-lg font-bold bg-transparent text-white border border-white hover:bg-white hover:text-[#111115] transition-all duration-300"
+                className="px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg font-bold bg-transparent text-white border border-white hover:bg-white hover:text-[#111115] transition-all duration-300"
                 style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}
               >
                 View All Menu
               </button>
             </div>
-            
+
             {/* Menu Items */}
-            <div className="space-y-10">
+            <div className="space-y-8 sm:space-y-10">
               {menuItems[activeCategory as keyof typeof menuItems]?.slice(0, 3).map((item) => (
-                <div
-                  key={item.id}
-                  className="flex gap-6 items-start"
-                >
-                  {/* Menu Item Image */}
+                <div key={item.id} className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
                   <div className="flex-shrink-0">
-                    <div className="relative overflow-hidden rounded-lg">
+                    <div className="relative overflow-hidden rounded-lg w-20 h-20 sm:w-24 sm:h-24">
                       <Image
                         src={item.image}
                         alt={item.name}
-                        width={80}
-                        height={80}
-                        className="object-cover w-20 h-20"
+                        width={96}
+                        height={96}
+                        className="object-cover w-full h-full"
                         onError={(e) => {
-                          // Fallback to a default image if the specified one fails
                           const target = e.target as HTMLImageElement;
                           target.src = '/assests-main/recipe-1.webp';
                         }}
                       />
                     </div>
                   </div>
-                  
-                  {/* Menu Item Content */}
+
                   <div className="flex-grow">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+                    <div className="flex justify-between items-start mb-2 sm:mb-4">
+                      <h3 className="text-lg sm:text-xl font-bold text-white" style={{ fontFamily: 'var(--font-el-messiri)' }}>
                         {item.name}
                       </h3>
-                      <span className="text-xl font-bold text-[#e2b279]" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>{item.price}</span>
+                      <span className="text-lg sm:text-xl font-bold text-[#e2b279]" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+                        {item.price}
+                      </span>
                     </div>
-                    <div className="w-full border-b border-dashed border-[#e2b279] mb-4"></div>
-                    <p className="text-white text-base leading-relaxed max-w-xs">
+                    <div className="w-full border-b border-dashed border-[#e2b279] mb-2 sm:mb-4"></div>
+                    <p className="text-white text-sm sm:text-base leading-relaxed max-w-xs" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
                       {item.description}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>
