@@ -39,15 +39,7 @@ const FoodCategories = () => {
 
   return (
     <section className={`${theme.spacing.sectionPadding} relative overflow-hidden bg-[#111115]`}>
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/assests-main/shape-5.webp"
-          alt="Background pattern"
-          fill
-          className="object-cover opacity-15"
-        />
-      </div>
+
       
       {/* Decorative green leafy branch on left edge */}
       <div className="absolute left-0 top-1/3 w-40 h-48 opacity-50 z-10 hidden lg:block">
@@ -70,10 +62,10 @@ const FoodCategories = () => {
           </h2>
         </div>
         
-        {/* Category Cards - Single Row on Large Screens */}
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 xl:gap-20">
+        {/* Category Cards - Single Row */}
+        <div className="flex flex-nowrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 overflow-x-auto">
           {categories.map((category) => (
-            <div key={category.id} className="text-center group flex-shrink-0 w-full max-w-[180px] sm:max-w-[200px] lg:max-w-[220px]">
+            <div key={category.id} className="text-center group flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px]">
               {/* Circular Image with Decorative Border */}
               <div className="relative mb-6 md:mb-8">
                 {/* Decorative concentric circles using cat-shape.web */}
@@ -100,12 +92,12 @@ const FoodCategories = () => {
               </div>
               
               {/* Category Name */}
-              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 md:mb-3" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 md:mb-3 text-center" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
                 {category.name}
               </h3>
               
               {/* Description */}
-              <p className="text-sm md:text-base text-[#bdbdbd] max-w-32 md:max-w-36 lg:max-w-40 leading-relaxed">
+              <p className="text-sm md:text-base text-[#bdbdbd] max-w-32 md:max-w-36 lg:max-w-40 leading-relaxed text-center mx-auto">
                 {category.description}
               </p>
             </div>

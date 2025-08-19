@@ -5,8 +5,8 @@ import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const VideoSection = () => {
   return (
-    <section className={`${theme.spacing.sectionPadding} relative ${etarBellotaFont.variable}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className={`w-full px-4 sm:px-6 relative ${etarBellotaFont.variable}`}>
+      <div className="max-w-full mx-auto">
         {/* Main Video Banner */}
         <div className="relative w-full h-[600px] rounded-lg overflow-hidden">
           {/* Background Video Image */}

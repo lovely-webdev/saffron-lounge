@@ -36,7 +36,6 @@ export default function Home() {
       <AboutSection />
       <MenuShowcase />
       <FoodCategories />
-      <FoodGallery />
       <VideoSection />
       <Testimonials />
       <TeamProfiles
