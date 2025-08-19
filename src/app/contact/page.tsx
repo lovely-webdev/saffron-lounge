@@ -51,7 +51,7 @@ export default function ContactPage() {
 
       {/* Contact Form Section */}
       <div className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="bg-[#18181c] rounded-lg p-8 md:p-12 border border-[#23232a]">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
               Send Us A Message
@@ -153,13 +153,13 @@ export default function ContactPage() {
       </div>
 
       {/* Map Section */}
-      <div className="py-20 bg-[#18181c]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className=" bg-[#18181c]">
+        <div className="max-w-8xl mx-auto">
           <div className="bg-[#111115] rounded-lg overflow-hidden border border-[#23232a]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.332792300514!2d144.9535833153168!3d-37.81627997975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d0c4b5c3b1e8!2s121%20King%20St%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2s!4v1697020841234!5m2!1sen!2s"
               width="100%"
-              height="450"
+              height="750"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
@@ -171,8 +171,8 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Information Cards */}
-      <div className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div>
+        <div className="max-w-8xl mx-auto py-28">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Open Hours Card */}
             <div className="bg-[#18181c] rounded-lg p-8 border border-[#23232a] text-center">
