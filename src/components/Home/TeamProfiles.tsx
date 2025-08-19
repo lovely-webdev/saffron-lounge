@@ -8,6 +8,7 @@ interface TeamProfilesProps {
   members: TeamMember[];
   title?: string;
   description?: string;
+  variant?: string;
 }
 
 const TeamProfiles = ({
