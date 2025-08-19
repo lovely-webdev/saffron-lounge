@@ -4,7 +4,6 @@ import { etarBellotaFont } from "./etarBellotaFont";
 import { etarFont } from "./etarFont";
 import { etarMenuFont } from "./etarMenuFont";
 import "./globals.css";
-import ConditionalThemeToggle from "../components/ConditionalThemeToggle";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -93,7 +92,6 @@ export default function RootLayout({
           <div id="__main_header"><Header /></div>
           {children}
           <div id="__main_footer"><Footer /></div>
-          <ConditionalThemeToggle />
         </div>
         {/* Hide header/footer in admin area using a client-side script (also hides via CSS for a flicker-free experience) */}
         <style>{`

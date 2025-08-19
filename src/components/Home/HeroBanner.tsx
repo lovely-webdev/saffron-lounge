@@ -4,7 +4,7 @@ import { etarBellotaFont } from "@/app/etarBellotaFont";
 export default function HeroBanner() {
   return (
     <section
-      className="relative w-full min-h-screen overflow-hidden flex items-center justify-center pt-20 pb-20"
+      className="herobanner relative w-full min-h-screen overflow-hidden flex items-center justify-center pt-20 pb-20"
       style={{
         background: `url('/assests-main/hero-bg-shape.webp') center center / cover no-repeat, #18171d`,
       }}
@@ -12,7 +12,7 @@ export default function HeroBanner() {
       {/* Girl Image (left, vertically centered) */}
       <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-20">
         <Image
-          src="/assests-main/blog-1.webp"
+          src="/assests-main/hero-img-1.webp"
           alt="Girl"
           width={260}
           height={320}
@@ -39,7 +39,7 @@ export default function HeroBanner() {
       {/* Chef Image (center, above DELICIOUS) */}
       <div className="relative z-30 flex flex-col items-center justify-center min-h-[60vh] pt-16">
         <Image
-          src="/assests-main/hero-img-1.webp"
+          src="/assests-main/hero-img-2.webp"
           alt="Chef Serving"
           width={700}
           height={400}
@@ -69,40 +69,49 @@ export default function HeroBanner() {
         </a>
       </div>
       <style jsx global>{`
-        .hero-aesthetic {
-          font-size: 110px;
-          line-height: 1;
-          text-align: left;
-          font-weight: 400;
-        }
-        .hero-joyof {
-          font-size: 60px;
-          line-height: 1;
-          text-align: right;
-          font-weight: 400;
-        }
-        .hero-delicious {
-          font-size: 178px;
-          font-weight: 400;
-          letter-spacing: -0.085em;
-          color: rgba(226, 178, 121, 0.9);
-          line-height: 1;
-          white-space: nowrap;
-          /* stronger outline, lighter fill for a carved look */
-          text-shadow:
-            0 0 0 #18171d,
-            2px 2px 0 #18171d,
-            -2px -2px 0 #18171d,
-            2px -2px 0 #18171d,
-            -2px 2px 0 #18171d,
-            0 4px 30px rgba(0,0,0,0.35);
-        }
-        .hero-delicious span { color: #fff; }
-        .hero-cuisine {
-          font-size: 60px;
-          line-height: 1.1;
-          font-weight: 400;
-        }
+       .herobanner{
+    padding: 10%;
+}
+ .herobanner .hero-aesthetic {
+     font-family: "Playfair Display", serif;  /* elegant serif */
+
+ font-size: 120px;
+    padding-top: 3%;
+    padding-left: 8%;
+}
+
+.herobanner .hero-joyof {
+    z-index: 99;
+    padding-right: 24%;
+    padding-top: 9%;
+    font-size: 65px;
+    position: absolute;
+}
+
+.herobanner .hero-cuisine {
+    font-size: 75px;
+    line-height: 1.1;
+    font-weight: 600 !important;
+}
+.hero-delicious {
+    font-size: 220px;
+    display: block;
+    letter-spacing: -0.05px;
+    text-align: center;
+    -webkit-text-fill-color: #E2B279;
+    -webkit-text-stroke: #fff;
+    margin-top: 4%;
+}
+.hero-delicious span {
+    font: 900 clamp(3rem, 16vw, 14rem) / 1 "Abril Fatface", serif;
+    letter-spacing: 0.06em;
+    background: url(/path/your-photo.jpg) center / cover no-repeat;
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, .3) !important;
+}
         @media (max-width: 1199px) {
           .hero-aesthetic { font-size: 80px; }
           .hero-joyof { font-size: 44px; }
