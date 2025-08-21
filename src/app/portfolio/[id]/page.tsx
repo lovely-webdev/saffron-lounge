@@ -10,16 +10,16 @@ const PortfolioDetailPage = () => {
     id: 1,
     title: "Gourmet Plating",
     category: "Food",
-    image: "/assets/img/portfolio/portfolio-1.webp",
+    image: "/assests-main/recipe-2.webp",
     description: "Artfully presented signature dish",
     fullDescription: "This exquisite dish represents the pinnacle of our culinary artistry. Each element has been carefully selected and prepared to create a harmonious balance of flavors, textures, and visual appeal. Our chef's expertise shines through in every detail, from the precise arrangement of ingredients to the thoughtful selection of accompaniments.",
     date: "June 15, 2023",
     tags: ["Fine Dining", "Culinary Art", "Gourmet", "Presentation"],
     gallery: [
-      "/assets/img/portfolio/portfolio-1.webp",
-      "/assets/img/portfolio/portfolio-2.webp",
-      "/assets/img/portfolio/portfolio-3.webp",
-      "/assets/img/portfolio/portfolio-4.webp"
+      "/assests-main/recipe-3.webp",
+      "/assests-main/recipe-4.webp",
+      "/assests-main/recipe-5.webp",
+      "/assests-main/recipe-6.webp"
     ]
   };
 

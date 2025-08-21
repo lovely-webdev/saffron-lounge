@@ -14,42 +14,42 @@ const PortfolioPage = () => {
       id: 1,
       title: "Gourmet Plating",
       category: "Food",
-      image: "/assets/img/portfolio/portfolio-1.webp",
+      image: "/assests-main/recipe-1.webp",
       description: "Artfully presented signature dish"
     },
     {
       id: 2,
       title: "Wine Tasting Event",
       category: "Events",
-      image: "/assets/img/portfolio/portfolio-2.webp",
+      image: "/assests-main/recipe-2.webp",
       description: "Exclusive wine tasting session"
     },
     {
       id: 3,
       title: "Restaurant Interior",
       category: "Restaurant",
-      image: "/assets/img/portfolio/portfolio-3.webp",
+      image: "/assests-main/recipe-3.webp",
       description: "Elegant dining room ambiance"
     },
     {
       id: 4,
       title: "Chef in Action",
       category: "Chef",
-      image: "/assets/img/portfolio/portfolio-4.webp",
+      image: "/assests-main/recipe-4.webp",
       description: "Master chef preparing cuisine"
     },
     {
       id: 5,
       title: "Cocktail Presentation",
       category: "Drinks",
-      image: "/assets/img/portfolio/portfolio-5.webp",
+      image: "/assests-main/recipe-5.webp",
       description: "Craft cocktail creation"
     },
     {
       id: 6,
       title: "Dessert Artistry",
       category: "Food",
-      image: "/assets/img/portfolio/portfolio-6.webp",
+      image: "/assests-main/recipe-6.webp",
       description: "Exquisite dessert presentation"
     }
   ];
