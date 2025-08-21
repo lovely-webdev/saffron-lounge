@@ -16,7 +16,7 @@ export default function AboutPage() {
       <div className="et-breadcrumb bg-[#18181c] py-20 pt-52">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col items-center text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-el-messiri)' }}>
               About Us
             </h1>
             <div className="flex items-center text-[#bdbdbd]">

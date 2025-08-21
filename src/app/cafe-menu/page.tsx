@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react';
-import CafeMenu from '../../../components/Menu/CafeMenu';
-import { etarBellotaFont } from '../../../app/etarBellotaFont';
+import CafeMenu from '../../components/Menu/CafeMenu';
+import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const CafeMenuPage = () => {
   return (
