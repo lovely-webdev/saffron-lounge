@@ -34,7 +34,18 @@ const MenuShowcase = () => {
   };
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#18171d] ${etarBellotaFont.variable}`}>
+    <section className={`${theme.spacing.sectionPadding} bg-[#18171d] ${etarBellotaFont.variable} relative overflow-hidden`}>
+      {/* Background Shape */}
+      <div className="absolute left-0 top-1/4 w-40 h-48 opacity-10 z-0 hidden lg:block">
+        <Image
+          src="/assests-main/shape-6.webp"
+          alt="Decorative background shape"
+          width={160}
+          height={192}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      
       <ResponsiveContainer>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-start">
           
@@ -50,15 +61,15 @@ const MenuShowcase = () => {
                 <Image
                   src="/assests-main/recipe-1.webp"
                   alt="Main dish"
-                  width={500}
-                  height={400}
+                  width={300}
+                  height={200}
                   className="object-cover w-full h-auto"
                   priority
                 />
               </div>
 
               {/* Decorative element - hidden on mobile */}
-              <div className="absolute -bottom-8 -left-8 w-20 sm:w-28 h-24 sm:h-36 opacity-90 hidden sm:block">
+              {/* <div className="absolute -bottom-8 -left-8 w-20 sm:w-28 h-24 sm:h-36 opacity-90 hidden sm:block">
                 <Image
                   src="/assests-main/about-shape-1.webp"
                   alt="Decorative leafy branch"
@@ -66,7 +77,7 @@ const MenuShowcase = () => {
                   height={176}
                   className="object-contain w-full h-full"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
 

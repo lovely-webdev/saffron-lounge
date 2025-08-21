@@ -36,8 +36,28 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#18181c] ${etarBellotaFont.variable}`}>
-      <div className="max-w-full mx-auto px-4 sm:px-6">
+    <section className={`${theme.spacing.sectionPadding} bg-[#18181c] ${etarBellotaFont.variable} relative overflow-hidden`}>
+      {/* Background Shapes */}
+      <div className="absolute left-0 top-1/4 w-32 h-32 opacity-10 hidden lg:block">
+        <Image
+          src="/assests-main/shape-3.webp"
+          alt="Decorative shape"
+          width={128}
+          height={128}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      <div className="absolute right-0 bottom-1/4 w-32 h-32 opacity-10 hidden lg:block">
+        <Image
+          src="/assests-main/shape-12.webp"
+          alt="Decorative shape"
+          width={128}
+          height={128}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      
+      <div className="max-w-full mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Our Blog</h2>
           <p className="text-xl text-[#bdbdbd] max-w-3xl mx-auto">

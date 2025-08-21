@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
-import { TeamMember } from '@/types/team';
 import ResponsiveContainer from './ResponsiveContainer';
+
+interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  image: string;
+  bio?: string;
+}
 
 interface TeamProfilesProps {
   members: TeamMember[];
@@ -29,6 +36,26 @@ const TeamProfiles = ({
 
   return (
     <section className={`${theme.spacing.sectionPadding} relative bg-[#18171d] ${etarBellotaFont.variable}`}>
+      {/* Background Shapes */}
+      <div className="absolute left-0 top-1/4 w-32 h-32 opacity-10 hidden lg:block">
+        <Image
+          src="/assests-main/shape-9.webp"
+          alt="Decorative shape"
+          width={128}
+          height={128}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      <div className="absolute right-0 bottom-1/4 w-32 h-32 opacity-10 hidden lg:block">
+        <Image
+          src="/assests-main/shape-12.webp"
+          alt="Decorative shape"
+          width={128}
+          height={128}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      
       <ResponsiveContainer>
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 sm:mb-10 lg:mb-12">

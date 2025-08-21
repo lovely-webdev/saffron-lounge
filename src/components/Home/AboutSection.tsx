@@ -6,8 +6,19 @@ import { etarBellotaFont } from '../../app/etarBellotaFont';
 
 const AboutSection = () => {
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
-      <div className="max-w-full mx-auto">
+    <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable} relative overflow-hidden`}>
+      {/* Background Shape */}
+      <div className="absolute right-0 top-1/3 w-40 h-48 opacity-20 z-0 hidden lg:block">
+        <Image
+          src="/assests-main/about-shape-1.webp"
+          alt="Decorative leafy branch"
+          width={160}
+          height={192}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      
+      <div className="max-w-full mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left side - Image */}

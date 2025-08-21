@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
@@ -7,6 +8,26 @@ import ResponsiveContainer from './ResponsiveContainer';
 const Reservation = () => {
   return (
     <section className={`${theme.spacing.sectionPadding} relative bg-[#111115] ${etarBellotaFont.variable}`}>
+      {/* Background Shapes */}
+      <div className="absolute left-0 top-1/4 w-32 h-32 opacity-10 hidden lg:block">
+        <Image
+          src="/assests-main/shape-13.webp"
+          alt="Decorative shape"
+          width={128}
+          height={128}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      <div className="absolute right-0 bottom-1/4 w-32 h-32 opacity-10 hidden lg:block">
+        <Image
+          src="/assests-main/shape-6.webp"
+          alt="Decorative shape"
+          width={128}
+          height={128}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      
       <ResponsiveContainer>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left Side - Reservation Form */}

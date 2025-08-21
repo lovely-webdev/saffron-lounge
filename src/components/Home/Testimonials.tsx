@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 import ResponsiveContainer from './ResponsiveContainer';
@@ -46,6 +47,26 @@ const Testimonials = () => {
 
   return (
     <section className={`${theme.spacing.sectionPadding} relative bg-[#111115] ${etarBellotaFont.variable}`}>
+      {/* Background Shapes */}
+      <div className="absolute left-0 top-1/4 w-32 h-32 opacity-10 hidden lg:block">
+        <Image
+          src="/assests-main/shape-4.webp"
+          alt="Decorative shape"
+          width={128}
+          height={128}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      <div className="absolute right-0 bottom-1/4 w-32 h-32 opacity-10 hidden lg:block">
+        <Image
+          src="/assests-main/shape-10.webp"
+          alt="Decorative shape"
+          width={128}
+          height={128}
+          className="object-contain w-full h-full"
+        />
+      </div>
+      
       <ResponsiveContainer>
         {/* Rating Stars */}
         <div className="flex justify-center items-center mb-2">
@@ -68,7 +89,7 @@ const Testimonials = () => {
         </div>
 
         {/* Rating Number */}
-        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 sm:mb-6" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
+        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 sm:mb-6 text-center" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
           {currentTestimonial.rating}/5.0
         </div>
 
@@ -106,7 +127,7 @@ const Testimonials = () => {
               strokeWidth="2"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7 7-7-7" />
             </svg>
           </button>
 

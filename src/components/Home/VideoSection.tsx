@@ -14,8 +14,30 @@ const VideoSection = () => {
   };
 
   return (
-    <section className={`w-full relative ${etarBellotaFont.variable}`}>
-      <div className="max-w-full mx-auto">
+    <section className={`w-full relative ${etarBellotaFont.variable} py-20 bg-[#111115]`}>
+      {/* Background decoration */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute left-0 top-1/4 w-32 h-32 opacity-10 hidden lg:block">
+          <Image
+            src="/assests-main/shape-1.webp"
+            alt="Decorative shape"
+            width={128}
+            height={128}
+            className="object-contain w-full h-full"
+          />
+        </div>
+        <div className="absolute right-0 bottom-1/4 w-32 h-32 opacity-10 hidden lg:block">
+          <Image
+            src="/assests-main/shape-3.webp"
+            alt="Decorative shape"
+            width={128}
+            height={128}
+            className="object-contain w-full h-full"
+          />
+        </div>
+      </div>
+      
+      <div className="max-w-full mx-auto relative z-10">
         {/* Main Video Banner */}
         <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden">
           {/* Background Video Image */}
