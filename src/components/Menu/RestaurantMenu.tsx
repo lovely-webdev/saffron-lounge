@@ -13,28 +13,28 @@ const RestaurantMenu = () => {
   // Sample menu items for each category
   const menuItems = {
     Starter: [
-      { id: 1, name: 'Foie Gras', price: '$40.00', image: '/assets/img/menu/menu-item-1.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 2, name: 'Spring Rolls', price: '$18.00', image: '/assets/img/menu/menu-item-2.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 3, name: 'Bruschetta', price: '$22.00', image: '/assets/img/menu/menu-item-3.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 4, name: 'Calamari', price: '$25.00', image: '/assets/img/menu/menu-item-4.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 1, name: 'Foie Gras', price: '$40.00', image: '/assests-main/recipe-1.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 2, name: 'Spring Rolls', price: '$18.00', image: '/assests-main/recipe-2.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 3, name: 'Bruschetta', price: '$22.00', image: '/assests-main/recipe-3.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 4, name: 'Calamari', price: '$25.00', image: '/assests-main/recipe-4.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
     ],
     Dishes: [
-      { id: 5, name: 'Foie GLyonnaise Saladras', price: '$30.00', image: '/assets/img/menu/menu-item-5.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 6, name: 'Chicken Skewers', price: '$40.00', image: '/assets/img/menu/menu-item-6.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 7, name: 'Grilled Salmon', price: '$45.00', image: '/assets/img/menu/menu-item-7.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 8, name: 'Beef Wellington', price: '$55.00', image: '/assets/img/menu/menu-item-8.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 5, name: 'Foie GLyonnaise Saladras', price: '$30.00', image: '/assests-main/recipe-5.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 6, name: 'Chicken Skewers', price: '$40.00', image: '/assests-main/recipe-6.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 7, name: 'Grilled Salmon', price: '$45.00', image: '/assests-main/recipe-7.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 8, name: 'Beef Wellington', price: '$55.00', image: '/assests-main/recipe-8.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
     ],
     Desserts: [
-      { id: 9, name: 'Chocolate Cake', price: '$18.00', image: '/assets/img/menu/menu-item-9.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 10, name: 'Tiramisu', price: '$16.00', image: '/assets/img/menu/menu-item-10.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 11, name: 'Cheesecake', price: '$14.00', image: '/assets/img/menu/menu-item-11.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 12, name: 'Crème Brûlée', price: '$15.00', image: '/assets/img/menu/menu-item-12.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 9, name: 'Chocolate Cake', price: '$18.00', image: '/assests-main/recipe-1.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 10, name: 'Tiramisu', price: '$16.00', image: '/assests-main/cat-1.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 11, name: 'Cheesecake', price: '$14.00', image: '/assests-main/cat-2.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 12, name: 'Crème Brûlée', price: '$15.00', image: '/assests-main/cat-3.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
     ],
     'Drink & Wines': [
-      { id: 13, name: 'Red Wine', price: '$25.00', image: '/assets/img/menu/menu-item-13.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 14, name: 'White Wine', price: '$22.00', image: '/assets/img/menu/menu-item-14.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 15, name: 'Craft Beer', price: '$12.00', image: '/assets/img/menu/menu-item-15.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
-      { id: 16, name: 'Signature Cocktail', price: '$18.00', image: '/assets/img/menu/menu-item-16.jpg', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 13, name: 'Red Wine', price: '$25.00', image: '/assests-main/cat-4.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 14, name: 'White Wine', price: '$22.00', image: '/assests-main/cat-5.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 15, name: 'Craft Beer', price: '$12.00', image: '/assests-main/recipe-2.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
+      { id: 16, name: 'Signature Cocktail', price: '$18.00', image: '/assests-main/recipe-3.webp', description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia' },
     ]
   };
 

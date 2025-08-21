@@ -77,7 +77,7 @@ export default function HeroBanner() {
       {/* Book Now Circle */}
       <div className="absolute right-8 bottom-8 z-40 flex flex-col items-center">
         <Image
-          src="/assets/img/hero/text-2.webp"
+          src="/assests-main/text-2.webp"
           alt="Book Now Circle"
           width={120}
           height={120}

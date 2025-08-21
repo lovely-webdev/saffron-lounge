@@ -13,7 +13,7 @@ const BlogSection = () => {
       date: "June 15, 2023",
       author: "David Miller",
       category: "Cooking Tips",
-      image: "/assets/img/blog/blog-1.webp"
+      image: "/assests-main/blog-1.webp"
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const BlogSection = () => {
       date: "July 2, 2023",
       author: "Sophia Williams",
       category: "Ingredients",
-      image: "/assets/img/blog/blog-2.webp"
+      image: "/assests-main/blog-2.webp"
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const BlogSection = () => {
       date: "July 20, 2023",
       author: "James Wilson",
       category: "Beverages",
-      image: "/assets/img/blog/blog-3.webp"
+      image: "/assests-main/blog-3.webp"
     }
   ];
 

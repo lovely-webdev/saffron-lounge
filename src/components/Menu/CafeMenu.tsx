@@ -13,28 +13,28 @@ const CafeMenu = () => {
   // Sample menu items for each category
   const menuItems = {
     Coffee: [
-      { id: 1, name: 'Espresso', price: '$3.00', image: '/assets/img/menu/menu-item-1.jpg', description: 'Strong black coffee made by forcing steam through ground coffee beans' },
-      { id: 2, name: 'Cappuccino', price: '$4.50', image: '/assets/img/menu/menu-item-2.jpg', description: 'Espresso with steamed milk foam' },
-      { id: 3, name: 'Latte', price: '$5.00', image: '/assets/img/menu/menu-item-3.jpg', description: 'Espresso with steamed milk and a small amount of foam' },
-      { id: 4, name: 'Americano', price: '$3.50', image: '/assets/img/menu/menu-item-4.jpg', description: 'Espresso diluted with hot water' },
+      { id: 1, name: 'Espresso', price: '$3.00', image: '/assests-main/recipe-1.webp', description: 'Strong black coffee made by forcing steam through ground coffee beans' },
+      { id: 2, name: 'Cappuccino', price: '$4.50', image: '/assests-main/recipe-2.webp', description: 'Espresso with steamed milk foam' },
+      { id: 3, name: 'Latte', price: '$5.00', image: '/assests-main/recipe-3.webp', description: 'Espresso with steamed milk and a small amount of foam' },
+      { id: 4, name: 'Americano', price: '$3.50', image: '/assests-main/recipe-4.webp', description: 'Espresso diluted with hot water' },
     ],
     Tea: [
-      { id: 5, name: 'Green Tea', price: '$3.00', image: '/assets/img/menu/menu-item-5.jpg', description: 'Freshly brewed green tea leaves' },
-      { id: 6, name: 'Black Tea', price: '$3.00', image: '/assets/img/menu/menu-item-6.jpg', description: 'Classic black tea blend' },
-      { id: 7, name: 'Herbal Tea', price: '$3.50', image: '/assets/img/menu/menu-item-7.jpg', description: 'Selection of herbal infusions' },
-      { id: 8, name: 'Chai Latte', price: '$4.50', image: '/assets/img/menu/menu-item-8.jpg', description: 'Spiced tea with steamed milk' },
+      { id: 5, name: 'Green Tea', price: '$3.00', image: '/assests-main/cat-1.webp', description: 'Freshly brewed green tea leaves' },
+      { id: 6, name: 'Black Tea', price: '$3.00', image: '/assests-main/cat-2.webp', description: 'Classic black tea blend' },
+      { id: 7, name: 'Herbal Tea', price: '$3.50', image: '/assests-main/cat-3.webp', description: 'Selection of herbal infusions' },
+      { id: 8, name: 'Chai Latte', price: '$4.50', image: '/assests-main/cat-4.webp', description: 'Spiced tea with steamed milk' },
     ],
     Pastries: [
-      { id: 9, name: 'Croissant', price: '$3.50', image: '/assets/img/menu/menu-item-9.jpg', description: 'Buttery French pastry' },
-      { id: 10, name: 'Muffin', price: '$4.00', image: '/assets/img/menu/menu-item-10.jpg', description: 'Blueberry or chocolate chip' },
-      { id: 11, name: 'Scone', price: '$3.75', image: '/assets/img/menu/menu-item-11.jpg', description: 'Fresh baked with fruit' },
-      { id: 12, name: 'Danish', price: '$4.25', image: '/assets/img/menu/menu-item-12.jpg', description: 'Buttery with fruit filling' },
+      { id: 9, name: 'Croissant', price: '$3.50', image: '/assests-main/cat-5.webp', description: 'Buttery French pastry' },
+      { id: 10, name: 'Muffin', price: '$4.00', image: '/assests-main/recipe-5.webp', description: 'Blueberry or chocolate chip' },
+      { id: 11, name: 'Scone', price: '$3.75', image: '/assests-main/recipe-6.webp', description: 'Fresh baked with fruit' },
+      { id: 12, name: 'Danish', price: '$4.25', image: '/assests-main/recipe-7.webp', description: 'Buttery with fruit filling' },
     ],
     'Light Meals': [
-      { id: 13, name: 'Avocado Toast', price: '$8.50', image: '/assets/img/menu/menu-item-13.jpg', description: 'Smashed avocado with microgreens' },
-      { id: 14, name: 'Breakfast Sandwich', price: '$7.50', image: '/assets/img/menu/menu-item-14.jpg', description: 'Egg, cheese, and bacon on a roll' },
-      { id: 15, name: 'Salad Bowl', price: '$9.00', image: '/assets/img/menu/menu-item-15.jpg', description: 'Mixed greens with seasonal ingredients' },
-      { id: 16, name: 'Soup of the Day', price: '$6.50', image: '/assets/img/menu/menu-item-16.jpg', description: 'Ask your server for today\'s selection' },
+      { id: 13, name: 'Avocado Toast', price: '$8.50', image: '/assests-main/recipe-8.webp', description: 'Smashed avocado with microgreens' },
+      { id: 14, name: 'Breakfast Sandwich', price: '$7.50', image: '/assests-main/recipe-1.webp', description: 'Egg, cheese, and bacon on a roll' },
+      { id: 15, name: 'Salad Bowl', price: '$9.00', image: '/assests-main/recipe-2.webp', description: 'Mixed greens with seasonal ingredients' },
+      { id: 16, name: 'Soup of the Day', price: '$6.50', image: '/assests-main/recipe-3.webp', description: 'Ask your server for today\'s selection' },
     ],
   };
 
