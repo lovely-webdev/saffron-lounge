@@ -1,11 +1,47 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
+  const [couponCode, setCouponCode] = useState('');
+
+  // Initialize with sample items for testing
+  useEffect(() => {
+    const sampleItems = [
+      {
+        id: 1,
+        name: "Truffle Pasta",
+        price: 24.99,
+        quantity: 2,
+        image: "/assets/img/menu/menu-1.webp",
+        category: "Main Course"
+      },
+      {
+        id: 2,
+        name: "Grilled Salmon",
+        price: 32.99,
+        quantity: 1,
+        image: "/assets/img/menu/menu-2.webp",
+        category: "Main Course"
+      },
+      {
+        id: 3,
+        name: "Chocolate Cake",
+        price: 12.99,
+        quantity: 3,
+        image: "/assets/img/menu/menu-3.webp",
+        category: "Desserts"
+      }
+    ];
+    
+    // Only set sample items if cart is empty
+    if (cartItems.length === 0) {
+      setCartItems(sampleItems);
+    }
+  }, []);
 
   const updateQuantity = (id: number, newQuantity: number) => {
     if (newQuantity < 1) return;
@@ -23,6 +59,15 @@ const CartPage = () => {
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const tax = subtotal * 0.08;
   const total = subtotal + tax;
+  
+  const applyCoupon = () => {
+    // Simple coupon logic for demo
+    if (couponCode === 'SAVE10') {
+      alert('Coupon applied! 10% discount added.');
+    } else {
+      alert('Invalid coupon code.');
+    }
+  };
 
   return (
     <>
@@ -74,7 +119,7 @@ const CartPage = () => {
                       <div key={item.id} className="p-6 flex flex-col sm:flex-row gap-6">
                         <div className="relative w-full sm:w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
                           <Image
-                            src={item.image}
+                            src={item.image || "/assets/img/menu/menu-1.webp"}
                             alt={item.name}
                             fill
                             className="object-cover"
@@ -151,6 +196,26 @@ const CartPage = () => {
                     <div className="flex justify-between pt-4 border-t border-[#23232a]">
                       <span className="text-white font-bold">Total</span>
                       <span className="text-[#e2b279] text-xl font-bold">${total.toFixed(2)}</span>
+                    </div>
+                  </div>
+                  
+                  {/* Coupon Code Section */}
+                  <div className="mb-6">
+                    <label className="block text-white mb-2">Coupon Code</label>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={couponCode}
+                        onChange={(e) => setCouponCode(e.target.value)}
+                        placeholder="Enter coupon code"
+                        className="flex-grow px-4 py-3 bg-[#111115] border border-[#23232a] text-white placeholder-[#666] focus:outline-none focus:border-[#e2b279] transition-colors duration-300 rounded-md"
+                      />
+                      <button 
+                        onClick={applyCoupon}
+                        className="px-4 py-3 bg-[#18181c] text-white border border-[#23232a] hover:bg-[#e2b279] hover:text-[#111115] transition-all duration-300 font-bold rounded-md"
+                      >
+                        Apply
+                      </button>
                     </div>
                   </div>
                   

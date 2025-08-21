@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 
@@ -68,8 +69,8 @@ const BlogSection = () => {
                 <p className="text-[#bdbdbd] mb-6">{post.excerpt}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-[#e2b279]">By {post.author}</span>
-                  <a
-                    href="#"
+                  <Link
+                    href={`/blog/${post.id}`}
                     className="text-white font-bold flex items-center group/readmore"
                   >
                     Read More
@@ -82,7 +83,7 @@ const BlogSection = () => {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -90,9 +91,9 @@ const BlogSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <button className="px-8 py-4 bg-[#e2b279] text-[#111115] font-bold text-lg rounded-full hover:bg-[#111115] hover:text-[#e2b279] border-2 border-[#e2b279] transition-all duration-300">
+          <Link href="/blog" className="px-8 py-4 bg-[#e2b279] text-[#111115] font-bold text-lg rounded-full hover:bg-[#111115] hover:text-[#e2b279] border-2 border-[#e2b279] transition-all duration-300 inline-block">
             View All Posts
-          </button>
+          </Link>
         </div>
       </div>
     </section>

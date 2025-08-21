@@ -101,9 +101,20 @@ export default function Header() {
               Shop <span className="ml-1 text-sm">&#x25BC;</span>
             </button>
             <div className="absolute left-0 top-full mt-3 w-48 bg-[#18181c] rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 z-50 border border-[#23232a]">
-              <Link href="/shop/grid" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] border-b border-[#23232a] last:border-b-0 transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Shop Grid</Link>
+              <Link href="/shop" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] border-b border-[#23232a] last:border-b-0 transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Shop Grid</Link>
               <Link href="/shop/details" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] border-b border-[#23232a] last:border-b-0 transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Shop Details</Link>
               <Link href="/cart" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Cart</Link>
+            </div>
+          </div>
+          
+          {/* Portfolio with submenu */}
+          <div className="relative group flex items-center min-w-[70px] h-8">
+            <button className="hover:text-[#E2B279] transition font-normal flex items-center text-[17px] leading-none focus:outline-none tracking-wide" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif', letterSpacing: '0.02em' }}>
+              Portfolio <span className="ml-1 text-sm">&#x25BC;</span>
+            </button>
+            <div className="absolute left-0 top-full mt-3 w-48 bg-[#18181c] rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 z-50 border border-[#23232a]">
+              <Link href="/portfolio" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] border-b border-[#23232a] last:border-b-0 transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Portfolio Grid</Link>
+              <Link href="/portfolio/1" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Portfolio Details</Link>
             </div>
           </div>
           
@@ -114,7 +125,7 @@ export default function Header() {
             </button>
             <div className="absolute left-0 top-full mt-3 w-48 bg-[#18181c] rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 z-50 border border-[#23232a]">
               <Link href="/blog" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] border-b border-[#23232a] last:border-b-0 transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Blog Grid</Link>
-              <Link href="/blog/details" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Blog Details</Link>
+              <Link href="/blog/1" className="block px-6 py-3 text-white hover:text-[#E2B279] text-[16px] transition" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>Blog Details</Link>
             </div>
           </div>
           
@@ -199,9 +210,19 @@ export default function Header() {
                     Shop <span className="ml-2 text-lg">&#x25BC;</span>
                   </button>
                   <div className="pl-4 mt-4 space-y-4">
-                    <Link href="/shop/grid" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Shop Grid</Link>
+                    <Link href="/shop" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Shop Grid</Link>
                     <Link href="/shop/details" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Shop Details</Link>
                     <Link href="/cart" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Cart</Link>
+                  </div>
+                </div>
+                
+                <div>
+                  <button className="text-white font-bold text-2xl flex items-center w-full py-3 border-b border-[#23232a] hover:text-[#E2B279]">
+                    Portfolio <span className="ml-2 text-lg">&#x25BC;</span>
+                  </button>
+                  <div className="pl-4 mt-4 space-y-4">
+                    <Link href="/portfolio" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Portfolio Grid</Link>
+                    <Link href="/portfolio/1" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Portfolio Details</Link>
                   </div>
                 </div>
                 
@@ -211,7 +232,7 @@ export default function Header() {
                   </button>
                   <div className="pl-4 mt-4 space-y-4">
                     <Link href="/blog" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Blog Grid</Link>
-                    <Link href="/blog/details" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Blog Details</Link>
+                    <Link href="/blog/1" className="block text-white text-lg py-2 hover:text-[#E2B279]" onClick={toggleMobileMenu}>Blog Details</Link>
                   </div>
                 </div>
                 

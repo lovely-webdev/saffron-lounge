@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { etarBellotaFont } from "@/app/etarBellotaFont";
 import { etarFont } from "@/app/etarFont"; // assuming this is --font-el-messiri
 
@@ -83,7 +84,7 @@ export default function HeroBanner() {
           className="animate-spin-slow opacity-90"
           priority
         />
-        <a
+        <Link
           href="/book-a-table"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-[#e2b279] text-[#18171d] text-xl font-bold shadow-xl hover:bg-white hover:scale-110 hover:shadow-2xl transition-all duration-300"
         >
@@ -99,7 +100,7 @@ export default function HeroBanner() {
           >
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
-        </a>
+        </Link>
       </div>
 
       <style jsx global>{`

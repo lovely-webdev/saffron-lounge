@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 import ResponsiveContainer from './ResponsiveContainer';
@@ -87,12 +88,13 @@ const MenuShowcase = () => {
                   {category}
                 </button>
               ))}
-              <button 
+              <Link 
+                href="/menu/restaurant"
                 className="px-3 py-2 sm:px-4 sm:py-2 rounded-full text-sm sm:text-base font-bold bg-transparent text-white border border-white hover:bg-white hover:text-[#111115] transition-all duration-300"
                 style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}
               >
                 View All Menu
-              </button>
+              </Link>
             </div>
 
             {/* Menu Items */}

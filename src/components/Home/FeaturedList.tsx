@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { etarBellotaFont } from "@/app/etarBellotaFont";
 
 export default function FeaturedList() {
@@ -8,24 +9,28 @@ export default function FeaturedList() {
       icon: "/assests-main/cutlary.svg",
       description:
         "making this the first true generator on the Internet. It uses a dictionary",
+      link: "/menu/restaurant"
     },
     {
       title: "Skilled Chefs",
       icon: "/assests-main/chef.svg",
       description:
         "making this the first true generator on the Internet. It uses a dictionary",
+      link: "/team"
     },
     {
       title: "Best Bar",
       icon: "/assests-main/drinks.svg",
       description:
         "making this the first true generator on the Internet. It uses a dictionary",
+      link: "/menu/cafe"
     },
     {
       title: "Vegan Cuisine",
       icon: "/assests-main/coffee.svg",
       description:
         "making this the first true generator on the Internet. It uses a dictionary",
+      link: "/menu/restaurant"
     },
   ];
 
@@ -67,13 +72,13 @@ export default function FeaturedList() {
                 {item.description}
               </p>
 
-              <a
-                href="#"
+              <Link
+                href={item.link}
                 className="mt-auto inline-block italic text-[#bdbdbd] hover:text-[#e2b279] transition-colors"
                 style={{ fontFamily: "var(--font-bellota), sans-serif" }}
               >
                 Discover More
-              </a>
+              </Link>
             </div>
           ))}
         </div>

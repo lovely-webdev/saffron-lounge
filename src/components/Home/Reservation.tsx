@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 import ResponsiveContainer from './ResponsiveContainer';
@@ -84,12 +85,12 @@ const Reservation = () => {
                   </div>
                 </div>
                 
-                <button
-                  type="submit"
-                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-[#e2b279] text-[#111115] font-bold text-base sm:text-lg rounded-lg hover:bg-[#d4a46a] transition-all duration-300"
+                <Link
+                  href="/book-a-table"
+                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-[#e2b279] text-[#111115] font-bold text-base sm:text-lg rounded-lg hover:bg-[#d4a46a] transition-all duration-300 text-center block"
                 >
                   Book A Table
-                </button>
+                </Link>
               </form>
             </div>
             

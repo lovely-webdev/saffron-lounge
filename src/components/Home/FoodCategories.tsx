@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 
@@ -40,7 +41,7 @@ const FoodCategories = () => {
         {/* Category Cards */}
         <div className="flex flex-nowrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 overflow-x-auto">
           {categories.map((category) => (
-            <div key={category.id} className="text-center group flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px]">
+            <Link key={category.id} href="/shop" className="text-center group flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px]">
               
               {/* Circular Image with Decorative Border */}
               <div className="relative mb-6 md:mb-8">
@@ -67,7 +68,7 @@ const FoodCategories = () => {
               </div>
               
               {/* Category Name */}
-              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 md:mb-3 text-center" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 md:mb-3 text-center group-hover:text-[#e2b279] transition-colors duration-300" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
                 {category.name}
               </h3>
               
@@ -75,7 +76,7 @@ const FoodCategories = () => {
               <p className="text-sm md:text-base text-[#bdbdbd] max-w-32 md:max-w-36 lg:max-w-40 leading-relaxed text-center mx-auto" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
                 {category.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

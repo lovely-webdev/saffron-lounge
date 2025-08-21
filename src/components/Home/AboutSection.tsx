@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 
@@ -54,9 +55,9 @@ const AboutSection = () => {
             </div>
             
             {/* Button */}
-            <button className="px-8 sm:px-10 py-3 sm:py-4 bg-[#e2b279] text-white font-bold text-base sm:text-lg rounded-lg hover:bg-[#d4a46a] transition-all duration-300" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
+            <Link href="/about" className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-[#e2b279] text-white font-bold text-base sm:text-lg rounded-lg hover:bg-[#d4a46a] transition-all duration-300" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
               Read More
-            </button>
+            </Link>
           </div>
         </div>
       </div>
