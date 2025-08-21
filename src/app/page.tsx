@@ -27,22 +27,40 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full flex flex-col gap-0 items-center justify-center min-h-[70vh] p-0 sm:p-0">
+    <main className="w-full flex flex-col gap-0 items-center justify-center min-h-[70vh]">
       <HeroBanner />
-      <FeaturedList />
-      <AboutSection />
-      <MenuShowcase />
-      <FoodCategories />
-      <VideoSection />
-      <Testimonials />
-      <TeamProfiles
-        members={teamMembers}
-        title="Meet Our Professionals"
-        description="Meet the passionate professionals who make our culinary vision a reality"
-        variant="home"
-      />
-      <Reservation />
-      <BlogSection />
+      <div className="w-full">
+        <FeaturedList />
+      </div>
+      <div className="w-full bg-[#111115]">
+        <AboutSection />
+      </div>
+      <div className="w-full bg-[#18171d]">
+        <MenuShowcase />
+      </div>
+      <div className="w-full bg-[#111115]">
+        <FoodCategories />
+      </div>
+      <div className="w-full bg-[#18171d]">
+        <VideoSection />
+      </div>
+      <div className="w-full bg-[#111115]">
+        <Testimonials />
+      </div>
+      <div className="w-full bg-[#18171d]">
+        <TeamProfiles
+          members={teamMembers}
+          title="Meet Our Professionals"
+          description="Meet the passionate professionals who make our culinary vision a reality"
+          variant="home"
+        />
+      </div>
+      <div className="w-full bg-[#111115]">
+        <Reservation />
+      </div>
+      <div className="w-full bg-[#18171d]">
+        <BlogSection />
+      </div>
     </main>
   );
 }

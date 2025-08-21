@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
 import { TeamMember } from '@/types/team';
+import ResponsiveContainer from './ResponsiveContainer';
 
 interface TeamProfilesProps {
   members: TeamMember[];
@@ -27,15 +28,15 @@ const TeamProfiles = ({
   };
 
   return (
-    <section className={`${theme.spacing.sectionPadding} relative bg-[#111115] ${etarBellotaFont.variable}`}>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+    <section className={`${theme.spacing.sectionPadding} relative bg-[#18171d] ${etarBellotaFont.variable}`}>
+      <ResponsiveContainer>
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 sm:mb-10 lg:mb-12">
           <div className="mb-6 lg:mb-0">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-el-messiri)' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-el-messiri)' }}>
               {title}
             </h2>
-            <p className="text-xl text-[#bdbdbd]">{description}</p>
+            <p className="text-base sm:text-lg md:text-xl text-[#bdbdbd]">{description}</p>
           </div>
         </div>
 
@@ -48,13 +49,13 @@ const TeamProfiles = ({
               return (
                 <div
                   key={member.id}
-                  className={`flex-none transition-transform duration-500 ${
+                  className={`flex-none transition-transform duration-500 ease-in-out ${
                     offset === 0 ? 'scale-100 opacity-100' : 'scale-90 opacity-60'
                   }`}
-                  style={{ minWidth: '25%' }}
+                  style={{ minWidth: '50%' }} // Show 2 items on mobile, 4 on larger screens
                 >
-                  <div className="text-center px-2">
-                    <div className="relative w-48 h-48 mx-auto rounded-lg overflow-hidden border-4 border-[#18181c] group-hover:border-[#e2b279] transition-all duration-300 shadow-lg">
+                  <div className="text-center px-1 sm:px-2">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto rounded-lg overflow-hidden border-4 border-[#18181c] group-hover:border-[#e2b279] transition-all duration-300 shadow-lg">
                       <Image
                         src={member.image}
                         alt={member.name}
@@ -62,47 +63,50 @@ const TeamProfiles = ({
                         className="object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mt-4">{member.name}</h3>
-                    <p className="text-lg text-[#e2b279]">{member.role}</p>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-3 sm:mt-4">{member.name}</h3>
+                    <p className="text-sm sm:text-base text-[#e2b279]">{member.role}</p>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - hidden on mobile */}
           <button
             onClick={prevMember}
-            className="absolute top-1/2 -left-6 transform -translate-y-1/2 w-12 h-12 rounded-full bg-[#333] hover:bg-[#444] flex items-center justify-center"
+            className="absolute top-1/2 -left-4 sm:-left-6 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#333] hover:bg-[#444] flex items-center justify-center hidden sm:flex"
+            aria-label="Previous team member"
           >
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
           <button
             onClick={nextMember}
-            className="absolute top-1/2 -right-6 transform -translate-y-1/2 w-12 h-12 rounded-full bg-[#333] hover:bg-[#444] flex items-center justify-center"
+            className="absolute top-1/2 -right-4 sm:-right-6 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#333] hover:bg-[#444] flex items-center justify-center hidden sm:flex"
+            aria-label="Next team member"
           >
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
 
         {/* Mobile Dots */}
-        <div className="flex justify-center mt-6 lg:hidden">
+        <div className="flex justify-center mt-6">
           {members.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`w-3 h-3 mx-2 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 sm:w-3 sm:h-3 mx-1 sm:mx-2 rounded-full transition-all duration-300 ${
                 idx === currentIndex ? 'bg-[#e2b279]' : 'bg-[#444]'
               }`}
+              aria-label={`Go to team member ${idx + 1}`}
             />
           ))}
         </div>
-      </div>
+      </ResponsiveContainer>
     </section>
   );
 };

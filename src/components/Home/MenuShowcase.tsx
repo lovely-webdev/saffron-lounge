@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
+import ResponsiveContainer from './ResponsiveContainer';
 
 const MenuShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('Dishes');
@@ -32,19 +33,19 @@ const MenuShowcase = () => {
   };
 
   return (
-    <section className={`${theme.spacing.sectionPadding} bg-[#111115] ${etarBellotaFont.variable}`}>
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+    <section className={`${theme.spacing.sectionPadding} bg-[#18171d] ${etarBellotaFont.variable}`}>
+      <ResponsiveContainer>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-start">
           
           {/* Left side - Banner */}
           <div className="relative mb-12 lg:mb-0">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 sm:mb-10 leading-tight" style={{ fontFamily: 'var(--font-el-messiri)' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight" style={{ fontFamily: 'var(--font-el-messiri)' }}>
               <span className="block mb-2">From Our</span>
               <span className="block">Restaurant Menu</span>
             </h2>
             
             <div className="relative">
-              <div className="relative rounded-lg overflow-hidden transform rotate-2 sm:rotate-3">
+              <div className="relative rounded-lg overflow-hidden transform rotate-1 sm:rotate-2">
                 <Image
                   src="/assests-main/recipe-1.webp"
                   alt="Main dish"
@@ -55,7 +56,8 @@ const MenuShowcase = () => {
                 />
               </div>
 
-              <div className="absolute -bottom-10 -left-10 w-24 sm:w-36 h-28 sm:h-44 opacity-90">
+              {/* Decorative element - hidden on mobile */}
+              <div className="absolute -bottom-8 -left-8 w-20 sm:w-28 h-24 sm:h-36 opacity-90 hidden sm:block">
                 <Image
                   src="/assests-main/about-shape-1.webp"
                   alt="Decorative leafy branch"
@@ -69,13 +71,13 @@ const MenuShowcase = () => {
 
           {/* Right side - Menu Items */}
           <div className="relative">
-            {/* Categories */}
-            <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-14">
+            {/* Categories - made more responsive */}
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg font-bold transition-all duration-300 ${
+                  className={`px-3 py-2 sm:px-4 sm:py-2 rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${
                     activeCategory === category
                       ? 'bg-[#e2b279] text-[#111115]'
                       : 'bg-[#18181c] text-white hover:bg-[#23232a]'
@@ -86,7 +88,7 @@ const MenuShowcase = () => {
                 </button>
               ))}
               <button 
-                className="px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg font-bold bg-transparent text-white border border-white hover:bg-white hover:text-[#111115] transition-all duration-300"
+                className="px-3 py-2 sm:px-4 sm:py-2 rounded-full text-sm sm:text-base font-bold bg-transparent text-white border border-white hover:bg-white hover:text-[#111115] transition-all duration-300"
                 style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}
               >
                 View All Menu
@@ -94,16 +96,16 @@ const MenuShowcase = () => {
             </div>
 
             {/* Menu Items */}
-            <div className="space-y-8 sm:space-y-10">
+            <div className="space-y-6 sm:space-y-8">
               {menuItems[activeCategory as keyof typeof menuItems]?.slice(0, 3).map((item) => (
-                <div key={item.id} className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+                <div key={item.id} className="flex flex-col sm:flex-row gap-4 items-start">
                   <div className="flex-shrink-0">
-                    <div className="relative overflow-hidden rounded-lg w-20 h-20 sm:w-24 sm:h-24">
+                    <div className="relative overflow-hidden rounded-lg w-16 h-16 sm:w-20 sm:h-20">
                       <Image
                         src={item.image}
                         alt={item.name}
-                        width={96}
-                        height={96}
+                        width={80}
+                        height={80}
                         className="object-cover w-full h-full"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -114,16 +116,16 @@ const MenuShowcase = () => {
                   </div>
 
                   <div className="flex-grow">
-                    <div className="flex justify-between items-start mb-2 sm:mb-4">
-                      <h3 className="text-lg sm:text-xl font-bold text-white" style={{ fontFamily: 'var(--font-el-messiri)' }}>
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-white" style={{ fontFamily: 'var(--font-el-messiri)' }}>
                         {item.name}
                       </h3>
-                      <span className="text-lg sm:text-xl font-bold text-[#e2b279]" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+                      <span className="text-base sm:text-lg font-bold text-[#e2b279]" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
                         {item.price}
                       </span>
                     </div>
-                    <div className="w-full border-b border-dashed border-[#e2b279] mb-2 sm:mb-4"></div>
-                    <p className="text-white text-sm sm:text-base leading-relaxed max-w-xs" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
+                    <div className="w-full border-b border-dashed border-[#e2b279] mb-2"></div>
+                    <p className="text-white text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'var(--font-etar-bellota), sans-serif' }}>
                       {item.description}
                     </p>
                   </div>
@@ -133,7 +135,7 @@ const MenuShowcase = () => {
 
           </div>
         </div>
-      </div>
+      </ResponsiveContainer>
     </section>
   );
 };

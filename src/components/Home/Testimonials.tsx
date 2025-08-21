@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { theme } from '../../app/theme';
 import { etarBellotaFont } from '../../app/etarBellotaFont';
+import ResponsiveContainer from './ResponsiveContainer';
 
 const Testimonials = () => {
   const testimonials = [
@@ -45,18 +46,13 @@ const Testimonials = () => {
 
   return (
     <section className={`${theme.spacing.sectionPadding} relative bg-[#111115] ${etarBellotaFont.variable}`}>
-      {/* Decorative illustrations */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Add SVGs for chili, garlic, pumpkin if needed */}
-      </div>
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center">
+      <ResponsiveContainer>
         {/* Rating Stars */}
         <div className="flex justify-center items-center mb-2">
           {[1, 2, 3, 4, 5].map((star) => (
             <svg
               key={star}
-              className={`w-6 h-6 mx-0.5 ${
+              className={`w-5 h-5 sm:w-6 sm:h-6 mx-0.5 ${
                 star <= Math.floor(currentTestimonial.rating)
                   ? 'text-[#e2b279]'
                   : star === Math.ceil(currentTestimonial.rating) && currentTestimonial.rating % 1 !== 0
@@ -72,38 +68,39 @@ const Testimonials = () => {
         </div>
 
         {/* Rating Number */}
-        <div className="text-xl md:text-2xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
+        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 sm:mb-6" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
           {currentTestimonial.rating}/5.0
         </div>
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center" style={{ fontFamily: 'var(--font-el-messiri), sans-serif' }}>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8 text-center" style={{ fontFamily: 'var(--font-el-messiri), sans-serif' }}>
           What Our Guests Are Saying
         </h2>
 
         {/* Testimonial Text */}
-        <blockquote className="text-base md:text-lg text-white leading-relaxed max-w-3xl mx-auto italic mb-8 text-center" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
+        <blockquote className="text-sm sm:text-base md:text-lg text-white leading-relaxed max-w-3xl mx-auto italic mb-6 sm:mb-8 text-center" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
           "{currentTestimonial.text}"
         </blockquote>
 
         {/* Author */}
-        <div className="text-center mb-12">
-          <div className="text-xl md:text-2xl font-bold text-white mb-1" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
             {currentTestimonial.author}
           </div>
-          <div className="text-sm md:text-lg text-white opacity-80" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
+          <div className="text-xs sm:text-sm md:text-lg text-white opacity-80" style={{ fontFamily: 'var(--font-bellota), sans-serif' }}>
             {currentTestimonial.title}
           </div>
         </div>
 
         {/* Navigation Arrows */}
-        <div className="flex justify-center items-center gap-6 mt-4">
+        <div className="flex justify-center items-center gap-4 sm:gap-6 mt-4">
           <button
             onClick={prevTestimonial}
-            className="w-10 h-10 rounded-full bg-[#333] hover:bg-[#444] transition-all duration-300 flex items-center justify-center group"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#333] hover:bg-[#444] transition-all duration-300 flex items-center justify-center group"
+            aria-label="Previous testimonial"
           >
             <svg
-              className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300"
+              className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:scale-110 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -113,12 +110,26 @@ const Testimonials = () => {
             </svg>
           </button>
 
+          <div className="flex gap-1">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full ${
+                  index === currentIndex ? 'bg-[#e2b279]' : 'bg-[#444]'
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
+
           <button
             onClick={nextTestimonial}
-            className="w-10 h-10 rounded-full bg-[#333] hover:bg-[#444] transition-all duration-300 flex items-center justify-center group"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#333] hover:bg-[#444] transition-all duration-300 flex items-center justify-center group"
+            aria-label="Next testimonial"
           >
             <svg
-              className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300"
+              className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:scale-110 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -128,7 +139,7 @@ const Testimonials = () => {
             </svg>
           </button>
         </div>
-      </div>
+      </ResponsiveContainer>
     </section>
   );
 };
